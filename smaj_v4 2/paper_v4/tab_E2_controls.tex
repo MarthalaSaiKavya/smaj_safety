@@ -1,0 +1,24 @@
+\begin{table}[t]
+\centering\small
+\caption{Restoring clean values under the box occluder at every inference step. Recovered fraction = (restored $-$ occluded)/(clean $-$ occluded) success, task-clustered bootstrap CI.}
+\label{tab_E2_controls}
+\begin{tabular}{l c c c}
+\toprule
+condition & success & 95\% CI & recovered fraction \\
+\midrule
+clean & 58/60 &  [0.89, 0.99] & -- \\
+covered & 10/60 &  [0.09, 0.28] & -- \\
+restore mlp & 59/60 &  [0.91, 1.00] & 1.02 [0.95, 1.16] \\
+restore attr & 8/60 &  [0.07, 0.24] & -0.04 [-0.24, 0.06] \\
+restore random & 8/60 &  [0.07, 0.24] & -0.04 [-0.15, 0.04] \\
+inject attr & 60/60 &  [0.94, 1.00] & -- \\
+restore sel & 11/60 &  [0.11, 0.30] & 0.02 [0.00, 0.06] \\
+restore mlp L0 13 & 58/60 &  [0.89, 0.99] & 1.00 [0.93, 1.14] \\
+restore sel top100 & 10/60 &  [0.09, 0.28] & 0.00 [0.00, 0.00] \\
+restore attr k300 & 18/60 &  [0.20, 0.43] & 0.17 [0.04, 0.36] \\
+restore attr k1000 & 18/60 &  [0.20, 0.43] & 0.17 [-0.14, 0.37] \\
+restore random k1000 & 12/60 &  [0.12, 0.32] & 0.04 [-0.05, 0.15] \\
+restore random k300 & 8/60 &  [0.07, 0.24] & -0.04 [-0.15, 0.04] \\
+\bottomrule
+\end{tabular}
+\end{table}

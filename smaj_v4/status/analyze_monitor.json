@@ -1,0 +1,21 @@
+{
+ "step": "analyze_monitor",
+ "complete": true,
+ "time": "2026-09-30 16:17:30",
+ "decision": {
+  "primary_window": 48,
+  "primary_family": "cover_sel",
+  "adds_value_over_simple_baseline": false,
+  "delta_auprc": {
+   "mean": 0.030172365634164255,
+   "ci95": [
+    -0.002597872744620105,
+    0.06572511024959006
+   ]
+  },
+  "heldout_occluder_better_than_simple": false,
+  "beats_every_random_draw": true,
+  "monitoring_claim_supported": false,
+  "rule": "claim = (simple+family) - simple AUPRC CI > 0 at the primary window AND the family alone beats the simple baseline on held-out occluder types; beating random draws is reported separately"
+ }
+}

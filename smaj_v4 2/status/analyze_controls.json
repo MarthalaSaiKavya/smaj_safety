@@ -1,0 +1,20 @@
+{
+ "step": "analyze_controls",
+ "complete": true,
+ "time": "2026-09-30 14:38:02",
+ "conditions": [
+  "clean",
+  "covered",
+  "restore_mlp",
+  "restore_attr",
+  "restore_random",
+  "inject_attr",
+  "restore_sel",
+  "restore_mlp_L0_13",
+  "restore_sel_top100",
+  "restore_attr_k300",
+  "restore_attr_k1000",
+  "restore_random_k1000",
+  "restore_random_k300"
+ ]
+}

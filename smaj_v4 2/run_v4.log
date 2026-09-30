@@ -1,0 +1,701 @@
+[13:07:09] == sets | out=/content/groot-run/outputs/permanence/smaj_v4
+[13:07:10] v4 feature sets: cover_sel 129, cover_sel_all 452, cover_attr 100, screen_sel 128, screen_sel_all 731, screen_attr 100, cover_sel_top100 100, cover_attr_k300 300, cover_attr_k1000 1000
+[13:07:10] == sets finished in 2s
+[13:07:11] == smoke | out=/content/groot-run/outputs/permanence/smaj_v4
+/content/lerobot-venv/lib/python3.12/site-packages/robosuite/__init__.py:33: SyntaxWarning: invalid escape sequence '\ '
+  /[_]\  [~]\/    |//  |
+/content/lerobot-venv/lib/python3.12/site-packages/robosuite/__init__.py:7: DeprecationWarning: The 'warn' method is deprecated, use 'warning' instead
+  ROBOSUITE_DEFAULT_LOGGER.warn("No private macro file found!")
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /content/lerobot-venv/lib/python3.12/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[13:07:25] checkpoint config has compile_model=True -> disabling torch.compile (hooks need eager mode)
+WARNING:root:Vision embedding key might need handling: model.paligemma_with_expert.paligemma.model.vision_tower.vision_model.embeddings.patch_embedding.bias
+WARNING:root:Vision embedding key might need handling: model.paligemma_with_expert.paligemma.model.vision_tower.vision_model.embeddings.patch_embedding.weight
+The PI05 model is a direct port of the OpenPI implementation. 
+This implementation follows the original OpenPI structure for compatibility. 
+Original implementation: https://github.com/Physical-Intelligence/openpi
+Loading model from: lerobot/pi05_libero_finetuned
+✓ Loaded state dict from model.safetensors
+All keys loaded successfully!
+/content/lerobot-venv/lib/python3.12/site-packages/torch/jit/_script.py:365: DeprecationWarning: `torch.jit.script_method` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+[13:09:53] policy PI05Policy loaded from lerobot/pi05_libero_finetuned in 148s | dtype=bfloat16 chunk=50 n_action_steps=50 image_features=['observation.images.image', 'observation.images.image2', 'observation.images.empty_camera_0'] | state input to sample_actions: False
+[13:09:53] hooked 18 LLM decoder layers (MLP + residual output)
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[13:10:09] task 0: target 'akita_black_bowl_1' (via obj_of_interest) | distractor 'akita_black_bowl_2' (via same object type, 41 geoms) | other objects of interest ['plate_1'] | geoms target=41 | free_joints=1
+[13:10:33] [smoke] task 0 | clean                 : success 0/1 | mean steps 25 | distractor lifted 0 | unwanted contact 0 | 1/5 episodes | ETA 0.0 h
+[13:10:49] [smoke] task 0 | covered               : success 0/1 | mean steps 25 | distractor lifted 0 | unwanted contact 0 | 2/5 episodes | ETA 0.0 h
+[13:11:07] [smoke] task 0 | cover_miss            : success 0/1 | mean steps 25 | distractor lifted 0 | unwanted contact 0 | 3/5 episodes | ETA 0.0 h
+[13:11:23] [smoke] task 0 | covered_static        : success 0/1 | mean steps 25 | distractor lifted 0 | unwanted contact 0 | 4/5 episodes | ETA 0.0 h
+[13:11:40] [smoke] task 0 | screened              : success 0/1 | mean steps 25 | distractor lifted 0 | unwanted contact 0 | 5/5 episodes | ETA 0.0 h
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[13:11:45] task 0: target 'akita_black_bowl_1' (via obj_of_interest) | distractor 'akita_black_bowl_2' (via same object type, 41 geoms) | other objects of interest ['plate_1'] | geoms target=41 | free_joints=1
+[13:11:53] [smoke] task 0 | restore_attr_k300     : success 0/1 | mean steps 12 | distractor lifted 0 | unwanted contact 0 | 1/3 episodes | ETA 0.0 h
+[13:12:01] [smoke] task 0 | restore_random_k300   : success 0/1 | mean steps 12 | distractor lifted 0 | unwanted contact 0 | 2/3 episodes | ETA 0.0 h
+[13:12:09] [smoke] task 0 | restore_mlp_L0_13     : success 0/1 | mean steps 12 | distractor lifted 0 | unwanted contact 0 | 3/3 episodes | ETA 0.0 h
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[13:12:15] task 0: target 'akita_black_bowl_1' (via obj_of_interest) | distractor 'akita_black_bowl_2' (via same object type, 41 geoms) | other objects of interest ['plate_1'] | geoms target=41 | free_joints=1
+[13:12:23] [smoke] task 0 | base                  : success 0/1 | mean steps 12 | distractor lifted 0 | unwanted contact 0 | 1/6 episodes | ETA 0.0 h
+[13:12:31] [smoke] task 0 | ablate                : success 0/1 | mean steps 12 | distractor lifted 0 | unwanted contact 0 | 2/6 episodes | ETA 0.0 h
+[13:12:40] [smoke] task 0 | boost                 : success 0/1 | mean steps 12 | distractor lifted 0 | unwanted contact 0 | 3/6 episodes | ETA 0.0 h
+[13:12:48] [smoke] task 0 | random                : success 0/1 | mean steps 12 | distractor lifted 0 | unwanted contact 0 | 4/6 episodes | ETA 0.0 h
+[13:12:56] [smoke] task 0 | prompt                : success 0/1 | mean steps 12 | distractor lifted 0 | unwanted contact 0 | 5/6 episodes | ETA 0.0 h
+[13:13:04] [smoke] task 0 | scale                 : success 0/1 | mean steps 12 | distractor lifted 0 | unwanted contact 0 | 6/6 episodes | ETA 0.0 h
+[13:13:06] smoke test passed: {"task": 0, "monitor_arrays": {"init_state": [92], "eef_pos": [25, 3], "eef_quat": [25, 4], "grip_qpos": [25, 2], "joint_vel": [25, 7], "action": [25, 7], "infer": [25], "target_z": [25], "dist_z": [25], "contacts": [25, 7], "probe_t": [5], "vis": [5, 5], "full": [5, 5, 5, 4096], "bank": [5, 5, 2361], "dense": [5, 5, 2, 2048]}, "visible_target_px_clean_vs_box": [769, 0], "occ_info": {"0|clean|0": {}, "0|covered|0": {}, "0|cover_miss|0": {"miss_offset_m": [0.17088617066582074, 0.1708861706658207, 0.0], "miss_tag": "clear"}, "0|covered_static|0": {"static_offset_m": [0.011512858433713063, -0.01935149183563871, 0.0], "static_half_m": [0.14500172410656423, 0.14500172410656423, 0.09666781607104274]}, "0|screened|0": {}}, "contact_info": {"n_robot_geoms": 70, "n_target_geoms": 41, "n_object_geoms": 80, "n_finger_geoms": 8, "n_left": 3, "n_right": 3}, "steer_relative_intervention_norm": {"base": null, "ablate": 0.016259547726284445, "boost": 0.9774397909641266, "random": 0.8465465770236084, "prompt": null, "scale": null}, "seconds_per_step_with_probes": 0.8505158767700195, "seconds_other_blocks": 84.88131952285767, "rough_runtime_estimate": {"monitor_h": 21.262896919250487}}
+[13:13:06] == smoke finished in 355s
+[13:13:09] == reanalyze | out=/content/groot-run/outputs/permanence/smaj_v4
+[13:13:17] E0: clean 58/60 lifted 0 RMST 109, covered 10/60 lifted 7 RMST 255, screened 33/60 lifted 0 RMST 193, painted 44/60 lifted 5 RMST 157, restore_mlp 59/60 lifted 0 RMST 108, restore_attr 8/60 lifted 6 RMST 262, restore_random 8/60 lifted 7 RMST 260, inject_attr 60/60 lifted 0 RMST 105, restore_sel 11/60 lifted 7 RMST 254
+[13:13:17] == reanalyze finished in 8s
+[13:13:18] == controls | out=/content/groot-run/outputs/permanence/smaj_v4
+/content/lerobot-venv/lib/python3.12/site-packages/robosuite/__init__.py:7: DeprecationWarning: The 'warn' method is deprecated, use 'warning' instead
+  ROBOSUITE_DEFAULT_LOGGER.warn("No private macro file found!")
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /content/lerobot-venv/lib/python3.12/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[13:13:25] checkpoint config has compile_model=True -> disabling torch.compile (hooks need eager mode)
+WARNING:root:Vision embedding key might need handling: model.paligemma_with_expert.paligemma.model.vision_tower.vision_model.embeddings.patch_embedding.bias
+WARNING:root:Vision embedding key might need handling: model.paligemma_with_expert.paligemma.model.vision_tower.vision_model.embeddings.patch_embedding.weight
+The PI05 model is a direct port of the OpenPI implementation. 
+This implementation follows the original OpenPI structure for compatibility. 
+Original implementation: https://github.com/Physical-Intelligence/openpi
+Loading model from: lerobot/pi05_libero_finetuned
+✓ Loaded state dict from model.safetensors
+All keys loaded successfully!
+/content/lerobot-venv/lib/python3.12/site-packages/torch/jit/_script.py:365: DeprecationWarning: `torch.jit.script_method` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+[13:15:53] policy PI05Policy loaded from lerobot/pi05_libero_finetuned in 148s | dtype=bfloat16 chunk=50 n_action_steps=50 image_features=['observation.images.image', 'observation.images.image2', 'observation.images.empty_camera_0'] | state input to sample_actions: False
+[13:15:53] hooked 18 LLM decoder layers (MLP + residual output)
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[13:16:00] task 0: target 'akita_black_bowl_1' (via obj_of_interest) | distractor 'akita_black_bowl_2' (via same object type, 41 geoms) | other objects of interest ['plate_1'] | geoms target=41 | free_joints=1
+[13:18:31] [controls] task 0 | restore_mlp_L0_13     : success 12/12 | mean steps 76 | distractor lifted 0 | unwanted contact 0 | 12/360 episodes | ETA 1.3 h
+[13:24:08] [controls] task 0 | restore_sel_top100    : success 2/12 | mean steps 267 | distractor lifted 0 | unwanted contact 7 | 24/360 episodes | ETA 1.9 h
+[13:28:57] [controls] task 0 | restore_attr_k300     : success 5/12 | mean steps 204 | distractor lifted 0 | unwanted contact 2 | 36/360 episodes | ETA 2.0 h
+[13:33:34] [controls] task 0 | restore_attr_k1000    : success 6/12 | mean steps 182 | distractor lifted 0 | unwanted contact 0 | 48/360 episodes | ETA 1.9 h
+[13:38:52] [controls] task 0 | restore_random_k1000  : success 4/12 | mean steps 244 | distractor lifted 0 | unwanted contact 8 | 60/360 episodes | ETA 1.9 h
+[13:43:53] [controls] task 0 | restore_random_k300   : success 3/12 | mean steps 256 | distractor lifted 0 | unwanted contact 9 | 72/360 episodes | ETA 1.9 h
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[13:43:59] task 2: target 'akita_black_bowl_1' (via obj_of_interest) | distractor 'akita_black_bowl_2' (via same object type, 41 geoms) | other objects of interest ['plate_1'] | geoms target=41 | free_joints=1
+[13:46:59] [controls] task 2 | restore_mlp_L0_13     : success 11/12 | mean steps 111 | distractor lifted 0 | unwanted contact 0 | 84/360 episodes | ETA 1.7 h
+[13:52:45] [controls] task 2 | restore_sel_top100    : success 0/12 | mean steps 280 | distractor lifted 8 | unwanted contact 12 | 96/360 episodes | ETA 1.7 h
+[13:58:27] [controls] task 2 | restore_attr_k300     : success 0/12 | mean steps 280 | distractor lifted 2 | unwanted contact 9 | 108/360 episodes | ETA 1.7 h
+[14:02:58] [controls] task 2 | restore_attr_k1000    : success 3/12 | mean steps 236 | distractor lifted 0 | unwanted contact 7 | 120/360 episodes | ETA 1.6 h
+[14:08:46] [controls] task 2 | restore_random_k1000  : success 0/12 | mean steps 280 | distractor lifted 11 | unwanted contact 11 | 132/360 episodes | ETA 1.5 h
+[14:14:30] [controls] task 2 | restore_random_k300   : success 0/12 | mean steps 280 | distractor lifted 8 | unwanted contact 12 | 144/360 episodes | ETA 1.5 h
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[14:14:36] task 6: target 'akita_black_bowl_1' (via obj_of_interest) | distractor 'akita_black_bowl_2' (via same object type, 41 geoms) | other objects of interest ['plate_1'] | geoms target=41 | free_joints=1
+[14:17:53] [controls] task 6 | restore_mlp_L0_13     : success 11/12 | mean steps 122 | distractor lifted 0 | unwanted contact 8 | 156/360 episodes | ETA 1.4 h
+[14:23:33] [controls] task 6 | restore_sel_top100    : success 0/12 | mean steps 280 | distractor lifted 0 | unwanted contact 12 | 168/360 episodes | ETA 1.3 h
+[14:29:12] [controls] task 6 | restore_attr_k300     : success 0/12 | mean steps 280 | distractor lifted 0 | unwanted contact 10 | 180/360 episodes | ETA 1.2 h
+[14:34:52] [controls] task 6 | restore_attr_k1000    : success 0/12 | mean steps 280 | distractor lifted 0 | unwanted contact 12 | 192/360 episodes | ETA 1.2 h
+[14:40:31] [controls] task 6 | restore_random_k1000  : success 0/12 | mean steps 280 | distractor lifted 0 | unwanted contact 10 | 204/360 episodes | ETA 1.1 h
+[14:44:17] == controls | out=/content/groot-run/outputs/permanence/smaj_v4
+/content/lerobot-venv/lib/python3.12/site-packages/robosuite/__init__.py:7: DeprecationWarning: The 'warn' method is deprecated, use 'warning' instead
+  ROBOSUITE_DEFAULT_LOGGER.warn("No private macro file found!")
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /content/lerobot-venv/lib/python3.12/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[14:44:24] checkpoint config has compile_model=True -> disabling torch.compile (hooks need eager mode)
+WARNING:root:Vision embedding key might need handling: model.paligemma_with_expert.paligemma.model.vision_tower.vision_model.embeddings.patch_embedding.bias
+WARNING:root:Vision embedding key might need handling: model.paligemma_with_expert.paligemma.model.vision_tower.vision_model.embeddings.patch_embedding.weight
+The PI05 model is a direct port of the OpenPI implementation. 
+This implementation follows the original OpenPI structure for compatibility. 
+Original implementation: https://github.com/Physical-Intelligence/openpi
+Loading model from: lerobot/pi05_libero_finetuned
+✓ Loaded state dict from model.safetensors
+All keys loaded successfully!
+/content/lerobot-venv/lib/python3.12/site-packages/torch/jit/_script.py:365: DeprecationWarning: `torch.jit.script_method` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+[14:46:53] policy PI05Policy loaded from lerobot/pi05_libero_finetuned in 149s | dtype=bfloat16 chunk=50 n_action_steps=50 image_features=['observation.images.image', 'observation.images.image2', 'observation.images.empty_camera_0'] | state input to sample_actions: False
+[14:46:53] hooked 18 LLM decoder layers (MLP + residual output)
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[14:46:59] task 6: target 'akita_black_bowl_1' (via obj_of_interest) | distractor 'akita_black_bowl_2' (via same object type, 41 geoms) | other objects of interest ['plate_1'] | geoms target=41 | free_joints=1
+[14:49:15] [controls] task 6 | restore_random_k300   : success 0/6 | mean steps 280 | distractor lifted 0 | unwanted contact 6 | 216/360 episodes | ETA 0.9 h
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[14:49:21] task 7: target 'akita_black_bowl_1' (via obj_of_interest) | distractor 'akita_black_bowl_2' (via same object type, 41 geoms) | other objects of interest ['plate_1'] | geoms target=41 | free_joints=1
+[14:52:44] [controls] task 7 | restore_mlp_L0_13     : success 12/12 | mean steps 121 | distractor lifted 0 | unwanted contact 0 | 228/360 episodes | ETA 0.7 h
+[14:58:06] [controls] task 7 | restore_sel_top100    : success 3/12 | mean steps 244 | distractor lifted 0 | unwanted contact 8 | 240/360 episodes | ETA 0.7 h
+[15:02:43] [controls] task 7 | restore_attr_k300     : success 5/12 | mean steps 219 | distractor lifted 0 | unwanted contact 0 | 252/360 episodes | ETA 0.7 h
+[15:06:56] [controls] task 7 | restore_attr_k1000    : success 7/12 | mean steps 188 | distractor lifted 0 | unwanted contact 0 | 264/360 episodes | ETA 0.6 h
+[15:12:33] [controls] task 7 | restore_random_k1000  : success 2/12 | mean steps 261 | distractor lifted 0 | unwanted contact 6 | 276/360 episodes | ETA 0.5 h
+[15:18:19] [controls] task 7 | restore_random_k300   : success 1/12 | mean steps 271 | distractor lifted 0 | unwanted contact 4 | 288/360 episodes | ETA 0.5 h
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[15:18:25] task 9: target 'akita_black_bowl_1' (via obj_of_interest) | distractor 'akita_black_bowl_2' (via same object type, 41 geoms) | other objects of interest ['plate_1'] | geoms target=41 | free_joints=1
+[15:21:43] [controls] task 9 | restore_mlp_L0_13     : success 12/12 | mean steps 121 | distractor lifted 0 | unwanted contact 0 | 300/360 episodes | ETA 0.4 h
+[15:26:47] [controls] task 9 | restore_sel_top100    : success 5/12 | mean steps 218 | distractor lifted 0 | unwanted contact 2 | 312/360 episodes | ETA 0.3 h
+[15:31:25] [controls] task 9 | restore_attr_k300     : success 8/12 | mean steps 178 | distractor lifted 0 | unwanted contact 2 | 324/360 episodes | ETA 0.2 h
+[15:36:54] [controls] task 9 | restore_attr_k1000    : success 2/12 | mean steps 254 | distractor lifted 0 | unwanted contact 1 | 336/360 episodes | ETA 0.2 h
+[15:41:47] [controls] task 9 | restore_random_k1000  : success 6/12 | mean steps 200 | distractor lifted 0 | unwanted contact 2 | 348/360 episodes | ETA 0.1 h
+[15:46:55] [controls] task 9 | restore_random_k300   : success 4/12 | mean steps 226 | distractor lifted 0 | unwanted contact 4 | 360/360 episodes | ETA 0.0 h
+[15:46:56] == controls finished in 3759s
+[17:28:08] == sets: already finished -> skipped (--resume)
+[17:28:08] == smoke: already finished -> skipped (--resume)
+[17:28:09] == reanalyze | out=/content/groot-run/outputs/permanence/smaj_v4
+[17:28:17] E0: clean 58/60 lifted 0 RMST 109, covered 10/60 lifted 7 RMST 255, screened 33/60 lifted 0 RMST 193, painted 44/60 lifted 5 RMST 157, restore_mlp 59/60 lifted 0 RMST 108, restore_attr 8/60 lifted 6 RMST 262, restore_random 8/60 lifted 7 RMST 260, inject_attr 60/60 lifted 0 RMST 105, restore_sel 11/60 lifted 7 RMST 254
+[17:28:17] == reanalyze finished in 8s
+[17:28:18] == controls | out=/content/groot-run/outputs/permanence/smaj_v4
+/content/lerobot-venv/lib/python3.12/site-packages/robosuite/__init__.py:33: SyntaxWarning: invalid escape sequence '\ '
+  /[_]\  [~]\/    |//  |
+/content/lerobot-venv/lib/python3.12/site-packages/robosuite/__init__.py:7: DeprecationWarning: The 'warn' method is deprecated, use 'warning' instead
+  ROBOSUITE_DEFAULT_LOGGER.warn("No private macro file found!")
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /content/lerobot-venv/lib/python3.12/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[17:28:35] checkpoint config has compile_model=True -> disabling torch.compile (hooks need eager mode)
+WARNING:root:Vision embedding key might need handling: model.paligemma_with_expert.paligemma.model.vision_tower.vision_model.embeddings.patch_embedding.bias
+WARNING:root:Vision embedding key might need handling: model.paligemma_with_expert.paligemma.model.vision_tower.vision_model.embeddings.patch_embedding.weight
+The PI05 model is a direct port of the OpenPI implementation. 
+This implementation follows the original OpenPI structure for compatibility. 
+Original implementation: https://github.com/Physical-Intelligence/openpi
+Loading model from: lerobot/pi05_libero_finetuned
+✓ Loaded state dict from model.safetensors
+All keys loaded successfully!
+/content/lerobot-venv/lib/python3.12/site-packages/torch/jit/_script.py:365: DeprecationWarning: `torch.jit.script_method` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+[17:31:03] policy PI05Policy loaded from lerobot/pi05_libero_finetuned in 149s | dtype=bfloat16 chunk=50 n_action_steps=50 image_features=['observation.images.image', 'observation.images.image2', 'observation.images.empty_camera_0'] | state input to sample_actions: False
+[17:31:03] hooked 18 LLM decoder layers (MLP + residual output)
+[17:31:04] == controls finished in 166s
+[17:31:07] == monitor | out=/content/groot-run/outputs/permanence/smaj_v4
+/content/lerobot-venv/lib/python3.12/site-packages/robosuite/__init__.py:7: DeprecationWarning: The 'warn' method is deprecated, use 'warning' instead
+  ROBOSUITE_DEFAULT_LOGGER.warn("No private macro file found!")
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /content/lerobot-venv/lib/python3.12/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[17:31:14] checkpoint config has compile_model=True -> disabling torch.compile (hooks need eager mode)
+WARNING:root:Vision embedding key might need handling: model.paligemma_with_expert.paligemma.model.vision_tower.vision_model.embeddings.patch_embedding.bias
+WARNING:root:Vision embedding key might need handling: model.paligemma_with_expert.paligemma.model.vision_tower.vision_model.embeddings.patch_embedding.weight
+The PI05 model is a direct port of the OpenPI implementation. 
+This implementation follows the original OpenPI structure for compatibility. 
+Original implementation: https://github.com/Physical-Intelligence/openpi
+Loading model from: lerobot/pi05_libero_finetuned
+✓ Loaded state dict from model.safetensors
+All keys loaded successfully!
+/content/lerobot-venv/lib/python3.12/site-packages/torch/jit/_script.py:365: DeprecationWarning: `torch.jit.script_method` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+[17:33:41] policy PI05Policy loaded from lerobot/pi05_libero_finetuned in 148s | dtype=bfloat16 chunk=50 n_action_steps=50 image_features=['observation.images.image', 'observation.images.image2', 'observation.images.empty_camera_0'] | state input to sample_actions: False
+[17:33:41] hooked 18 LLM decoder layers (MLP + residual output)
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[17:33:58] task 0: target 'akita_black_bowl_1' (via obj_of_interest) | distractor 'akita_black_bowl_2' (via same object type, 41 geoms) | other objects of interest ['plate_1'] | geoms target=41 | free_joints=1
+[17:38:15] [monitor] task 0 | clean                 : success 11/12 | mean steps 100 | distractor lifted 0 | unwanted contact 1 | 12/600 episodes | ETA 3.7 h
+[17:46:52] [monitor] task 0 | covered               : success 2/12 | mean steps 256 | distractor lifted 0 | unwanted contact 6 | 24/600 episodes | ETA 5.3 h
+[17:53:58] [monitor] task 0 | screened              : success 6/12 | mean steps 190 | distractor lifted 0 | unwanted contact 5 | 36/600 episodes | ETA 5.3 h
+[17:57:52] [monitor] task 0 | cover_miss            : success 12/12 | mean steps 85 | distractor lifted 0 | unwanted contact 1 | 48/600 episodes | ETA 4.6 h
+[18:06:55] [monitor] task 0 | covered_static        : success 1/12 | mean steps 272 | distractor lifted 0 | unwanted contact 3 | 60/600 episodes | ETA 5.0 h
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[18:07:01] task 1: target 'akita_black_bowl_1' (via obj_of_interest) | distractor 'akita_black_bowl_2' (via same object type, 41 geoms) | other objects of interest ['plate_1'] | geoms target=41 | free_joints=1
+[18:12:08] [monitor] task 1 | clean                 : success 11/12 | mean steps 136 | distractor lifted 0 | unwanted contact 2 | 72/600 episodes | ETA 4.7 h
+[18:21:14] [monitor] task 1 | covered               : success 0/12 | mean steps 280 | distractor lifted 7 | unwanted contact 12 | 84/600 episodes | ETA 4.9 h
+[18:30:23] [monitor] task 1 | screened              : success 0/12 | mean steps 280 | distractor lifted 6 | unwanted contact 12 | 96/600 episodes | ETA 5.0 h
+[18:35:52] [monitor] task 1 | cover_miss            : success 11/12 | mean steps 146 | distractor lifted 0 | unwanted contact 4 | 108/600 episodes | ETA 4.7 h
+[18:45:00] [monitor] task 1 | covered_static        : success 0/12 | mean steps 280 | distractor lifted 6 | unwanted contact 12 | 120/600 episodes | ETA 4.8 h
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[18:45:06] task 2: target 'akita_black_bowl_1' (via obj_of_interest) | distractor 'akita_black_bowl_2' (via same object type, 41 geoms) | other objects of interest ['plate_1'] | geoms target=41 | free_joints=1
+[18:49:14] [monitor] task 2 | clean                 : success 12/12 | mean steps 96 | distractor lifted 0 | unwanted contact 0 | 132/600 episodes | ETA 4.5 h
+[18:58:30] [monitor] task 2 | covered               : success 0/12 | mean steps 280 | distractor lifted 9 | unwanted contact 11 | 144/600 episodes | ETA 4.5 h
+[19:04:12] [monitor] task 2 | screened              : success 8/12 | mean steps 160 | distractor lifted 0 | unwanted contact 2 | 156/600 episodes | ETA 4.3 h
+[19:08:36] [monitor] task 2 | cover_miss            : success 12/12 | mean steps 101 | distractor lifted 0 | unwanted contact 0 | 168/600 episodes | ETA 4.1 h
+[19:17:51] [monitor] task 2 | covered_static        : success 0/12 | mean steps 280 | distractor lifted 9 | unwanted contact 12 | 180/600 episodes | ETA 4.1 h
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[19:17:57] task 3: target 'akita_black_bowl_1' (via obj_of_interest) | distractor 'akita_black_bowl_2' (via same object type, 41 geoms) | other objects of interest ['plate_1'] | geoms target=41 | free_joints=1
+[19:21:40] [monitor] task 3 | clean                 : success 12/12 | mean steps 84 | distractor lifted 0 | unwanted contact 1 | 192/600 episodes | ETA 3.8 h
+[19:30:36] [monitor] task 3 | covered               : success 1/12 | mean steps 263 | distractor lifted 0 | unwanted contact 6 | 204/600 episodes | ETA 3.8 h
+[19:39:56] [monitor] task 3 | screened              : success 0/12 | mean steps 280 | distractor lifted 0 | unwanted contact 6 | 216/600 episodes | ETA 3.7 h
+[19:43:48] [monitor] task 3 | cover_miss            : success 12/12 | mean steps 86 | distractor lifted 0 | unwanted contact 0 | 228/600 episodes | ETA 3.5 h
+[19:53:11] [monitor] task 3 | covered_static        : success 0/12 | mean steps 280 | distractor lifted 0 | unwanted contact 3 | 240/600 episodes | ETA 3.5 h
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[19:53:17] task 4: target 'akita_black_bowl_1' (via obj_of_interest) | distractor 'akita_black_bowl_2' (via same object type, 41 geoms) | other objects of interest ['plate_1'] | geoms target=41 | free_joints=1
+[19:59:06] [monitor] task 4 | clean                 : success 10/12 | mean steps 156 | distractor lifted 0 | unwanted contact 1 | 252/600 episodes | ETA 3.3 h
+[20:08:30] [monitor] task 4 | covered               : success 0/12 | mean steps 280 | distractor lifted 0 | unwanted contact 4 | 264/600 episodes | ETA 3.3 h
+[20:15:14] [monitor] task 4 | screened              : success 7/12 | mean steps 195 | distractor lifted 0 | unwanted contact 3 | 276/600 episodes | ETA 3.2 h
+[20:21:33] [monitor] task 4 | cover_miss            : success 10/12 | mean steps 169 | distractor lifted 0 | unwanted contact 2 | 288/600 episodes | ETA 3.0 h
+[21:18:52] == sets: already finished -> skipped (--resume)
+[21:18:52] == smoke | out=/content/groot-run/outputs/permanence/smaj_v4
+/content/lerobot-venv/lib/python3.12/site-packages/robosuite/__init__.py:33: SyntaxWarning: invalid escape sequence '\ '
+  /[_]\  [~]\/    |//  |
+/content/lerobot-venv/lib/python3.12/site-packages/robosuite/__init__.py:7: DeprecationWarning: The 'warn' method is deprecated, use 'warning' instead
+  ROBOSUITE_DEFAULT_LOGGER.warn("No private macro file found!")
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /content/lerobot-venv/lib/python3.12/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[21:19:09] checkpoint config has compile_model=True -> disabling torch.compile (hooks need eager mode)
+WARNING:root:Vision embedding key might need handling: model.paligemma_with_expert.paligemma.model.vision_tower.vision_model.embeddings.patch_embedding.bias
+WARNING:root:Vision embedding key might need handling: model.paligemma_with_expert.paligemma.model.vision_tower.vision_model.embeddings.patch_embedding.weight
+The PI05 model is a direct port of the OpenPI implementation. 
+This implementation follows the original OpenPI structure for compatibility. 
+Original implementation: https://github.com/Physical-Intelligence/openpi
+Loading model from: lerobot/pi05_libero_finetuned
+✓ Loaded state dict from model.safetensors
+All keys loaded successfully!
+/content/lerobot-venv/lib/python3.12/site-packages/torch/jit/_script.py:365: DeprecationWarning: `torch.jit.script_method` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+[21:21:39] policy PI05Policy loaded from lerobot/pi05_libero_finetuned in 151s | dtype=bfloat16 chunk=50 n_action_steps=50 image_features=['observation.images.image', 'observation.images.image2', 'observation.images.empty_camera_0'] | state input to sample_actions: False
+[21:21:39] hooked 18 LLM decoder layers (MLP + residual output)
+[21:21:40] [smoke] 0/5 episodes already on disk (earlier session / restored from Drive); 5 to run
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[21:21:55] task 0: target 'akita_black_bowl_1' (via obj_of_interest) | distractor 'akita_black_bowl_2' (via same object type, 41 geoms) | other objects of interest ['plate_1'] | geoms target=41 | free_joints=1
+[21:22:23] [smoke] task 0 | clean                 : success 0/1 | mean steps 40 | distractor lifted 0 | unwanted contact 0 | 28 s/episode | 1/5 episodes | ETA 0.0 h
+[21:22:44] [smoke] task 0 | covered               : success 0/1 | mean steps 40 | distractor lifted 0 | unwanted contact 0 | 21 s/episode | 2/5 episodes | ETA 0.0 h
+[21:23:05] [smoke] task 0 | cover_miss            : success 0/1 | mean steps 40 | distractor lifted 0 | unwanted contact 0 | 21 s/episode | 3/5 episodes | ETA 0.0 h
+[21:23:26] [smoke] task 0 | covered_static        : success 0/1 | mean steps 40 | distractor lifted 0 | unwanted contact 0 | 21 s/episode | 4/5 episodes | ETA 0.0 h
+[21:23:47] [smoke] task 0 | screened              : success 0/1 | mean steps 40 | distractor lifted 0 | unwanted contact 0 | 21 s/episode | 5/5 episodes | ETA 0.0 h
+[21:23:48] [smoke] block finished: 5/5 episodes on disk (5 new, 0.04 h)
+[21:23:48] [smoke] 0/1 episodes already on disk (earlier session / restored from Drive); 1 to run
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[21:23:53] task 0: target 'akita_black_bowl_1' (via obj_of_interest) | distractor 'akita_black_bowl_2' (via same object type, 41 geoms) | other objects of interest ['plate_1'] | geoms target=41 | free_joints=1
+[21:24:01] [smoke] task 0 | clean                 : success 0/1 | mean steps 40 | distractor lifted 0 | unwanted contact 0 | 8 s/episode | 1/1 episodes | ETA 0.0 h
+[21:24:02] [smoke] block finished: 1/1 episodes on disk (1 new, 0.00 h)
+[21:24:02] [smoke] 0/3 episodes already on disk (earlier session / restored from Drive); 3 to run
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[21:24:07] task 0: target 'akita_black_bowl_1' (via obj_of_interest) | distractor 'akita_black_bowl_2' (via same object type, 41 geoms) | other objects of interest ['plate_1'] | geoms target=41 | free_joints=1
+[21:24:15] [smoke] task 0 | restore_attr_k300     : success 0/1 | mean steps 12 | distractor lifted 0 | unwanted contact 0 | 8 s/episode | 1/3 episodes | ETA 0.0 h
+[21:24:22] [smoke] task 0 | restore_random_k300   : success 0/1 | mean steps 12 | distractor lifted 0 | unwanted contact 0 | 8 s/episode | 2/3 episodes | ETA 0.0 h
+[21:24:30] [smoke] task 0 | restore_mlp_L0_13     : success 0/1 | mean steps 12 | distractor lifted 0 | unwanted contact 0 | 8 s/episode | 3/3 episodes | ETA 0.0 h
+[21:24:31] [smoke] block finished: 3/3 episodes on disk (3 new, 0.01 h)
+[21:24:31] [smoke] 0/6 episodes already on disk (earlier session / restored from Drive); 6 to run
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[21:24:36] task 0: target 'akita_black_bowl_1' (via obj_of_interest) | distractor 'akita_black_bowl_2' (via same object type, 41 geoms) | other objects of interest ['plate_1'] | geoms target=41 | free_joints=1
+[21:24:44] [smoke] task 0 | base                  : success 0/1 | mean steps 12 | distractor lifted 0 | unwanted contact 0 | 8 s/episode | 1/6 episodes | ETA 0.0 h
+[21:24:53] [smoke] task 0 | ablate                : success 0/1 | mean steps 12 | distractor lifted 0 | unwanted contact 0 | 8 s/episode | 2/6 episodes | ETA 0.0 h
+[21:25:01] [smoke] task 0 | boost                 : success 0/1 | mean steps 12 | distractor lifted 0 | unwanted contact 0 | 8 s/episode | 3/6 episodes | ETA 0.0 h
+[21:25:10] [smoke] task 0 | random                : success 0/1 | mean steps 12 | distractor lifted 0 | unwanted contact 0 | 8 s/episode | 4/6 episodes | ETA 0.0 h
+[21:25:18] [smoke] task 0 | prompt                : success 0/1 | mean steps 12 | distractor lifted 0 | unwanted contact 0 | 8 s/episode | 5/6 episodes | ETA 0.0 h
+[21:25:26] [smoke] task 0 | scale                 : success 0/1 | mean steps 12 | distractor lifted 0 | unwanted contact 0 | 8 s/episode | 6/6 episodes | ETA 0.0 h
+[21:25:28] [smoke] block finished: 6/6 episodes on disk (6 new, 0.02 h)
+[21:25:28] smoke test passed: {"task": 0, "monitor_arrays": {"init_state": [92], "eef_pos": [40, 3], "eef_quat": [40, 4], "grip_qpos": [40, 2], "joint_vel": [40, 7], "action": [40, 7], "infer": [40], "target_z": [40], "dist_z": [40], "contacts": [40, 7], "probe_t": [5], "vis": [5, 5], "full": [5, 5, 5, 4096], "bank": [5, 5, 2361], "dense": [5, 5, 2, 2048]}, "visible_target_px_clean_vs_box": [769, 0], "occ_info": {"0|clean|0": {}, "0|covered|0": {}, "0|cover_miss|0": {"miss_offset_m": [0.17088617066582074, 0.1708861706658207, 0.0], "miss_tag": "clear"}, "0|covered_static|0": {"static_offset_m": [0.011512858433713063, -0.01935149183563871, 0.0], "static_half_m": [0.14500172410656423, 0.14500172410656423, 0.09666781607104274]}, "0|screened|0": {}}, "contact_info": {"n_robot_geoms": 70, "n_target_geoms": 41, "n_object_geoms": 80, "n_finger_geoms": 8, "n_left": 3, "n_right": 3}, "steer_relative_intervention_norm": {"base": null, "ablate": 0.016259547726284445, "boost": 0.9774397909641266, "random": 0.8465465770236084, "prompt": null, "scale": null}, "timing": {"seconds_per_step_with_probes": 0.36681588590145114, "seconds_per_step_without_probes": 0.05569026470184326, "reset_seconds_per_episode": 6.1606080532073975, "probe_stride": 8, "note": "smoke episodes also write a video every step, so these are upper bounds"}, "runtime_estimate_h": {"E3_monitor_h": 12.6, "E2_controls_h": 2.0, "E5_steer_h": 8.4}, "seconds_other_blocks": 85.6668267250061}
+[21:25:28] == smoke finished in 396s
+[21:25:31] == reanalyze | out=/content/groot-run/outputs/permanence/smaj_v4
+[21:25:40] E0: clean 58/60 lifted 0 RMST 109, covered 10/60 lifted 7 RMST 255, screened 33/60 lifted 0 RMST 193, painted 44/60 lifted 5 RMST 157, restore_mlp 59/60 lifted 0 RMST 108, restore_attr 8/60 lifted 6 RMST 262, restore_random 8/60 lifted 7 RMST 260, inject_attr 60/60 lifted 0 RMST 105, restore_sel 11/60 lifted 7 RMST 254
+[21:25:40] == reanalyze finished in 8s
+[21:25:41] == controls | out=/content/groot-run/outputs/permanence/smaj_v4
+/content/lerobot-venv/lib/python3.12/site-packages/robosuite/__init__.py:7: DeprecationWarning: The 'warn' method is deprecated, use 'warning' instead
+  ROBOSUITE_DEFAULT_LOGGER.warn("No private macro file found!")
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /content/lerobot-venv/lib/python3.12/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[21:25:48] checkpoint config has compile_model=True -> disabling torch.compile (hooks need eager mode)
+WARNING:root:Vision embedding key might need handling: model.paligemma_with_expert.paligemma.model.vision_tower.vision_model.embeddings.patch_embedding.bias
+WARNING:root:Vision embedding key might need handling: model.paligemma_with_expert.paligemma.model.vision_tower.vision_model.embeddings.patch_embedding.weight
+The PI05 model is a direct port of the OpenPI implementation. 
+This implementation follows the original OpenPI structure for compatibility. 
+Original implementation: https://github.com/Physical-Intelligence/openpi
+Loading model from: lerobot/pi05_libero_finetuned
+✓ Loaded state dict from model.safetensors
+All keys loaded successfully!
+/content/lerobot-venv/lib/python3.12/site-packages/torch/jit/_script.py:365: DeprecationWarning: `torch.jit.script_method` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+[21:28:17] policy PI05Policy loaded from lerobot/pi05_libero_finetuned in 149s | dtype=bfloat16 chunk=50 n_action_steps=50 image_features=['observation.images.image', 'observation.images.image2', 'observation.images.empty_camera_0'] | state input to sample_actions: False
+[21:28:17] hooked 18 LLM decoder layers (MLP + residual output)
+[21:28:18] [controls] 360/360 episodes already on disk (earlier session / restored from Drive); 0 to run
+[21:28:18] [controls] nothing to run: every episode of this block is finished
+[21:28:18] [controls] block finished: 360/360 episodes on disk (0 new, 0.00 h)
+[21:28:18] == controls finished in 157s
+[21:28:20] == analyze_controls | out=/content/groot-run/outputs/permanence/smaj_v4
+[21:28:29] E2: clean 58/60, covered 10/60, restore_mlp 59/60, restore_attr 8/60, restore_random 8/60, inject_attr 60/60, restore_sel 11/60, restore_mlp_L0_13 58/60, restore_sel_top100 10/60, restore_attr_k300 18/60, restore_attr_k1000 18/60, restore_random_k1000 12/60, restore_random_k300 8/60
+[21:28:29] == analyze_controls finished in 9s
+[21:28:30] == monitor | out=/content/groot-run/outputs/permanence/smaj_v4
+/content/lerobot-venv/lib/python3.12/site-packages/robosuite/__init__.py:7: DeprecationWarning: The 'warn' method is deprecated, use 'warning' instead
+  ROBOSUITE_DEFAULT_LOGGER.warn("No private macro file found!")
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /content/lerobot-venv/lib/python3.12/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[21:28:37] checkpoint config has compile_model=True -> disabling torch.compile (hooks need eager mode)
+WARNING:root:Vision embedding key might need handling: model.paligemma_with_expert.paligemma.model.vision_tower.vision_model.embeddings.patch_embedding.bias
+WARNING:root:Vision embedding key might need handling: model.paligemma_with_expert.paligemma.model.vision_tower.vision_model.embeddings.patch_embedding.weight
+The PI05 model is a direct port of the OpenPI implementation. 
+This implementation follows the original OpenPI structure for compatibility. 
+Original implementation: https://github.com/Physical-Intelligence/openpi
+Loading model from: lerobot/pi05_libero_finetuned
+✓ Loaded state dict from model.safetensors
+All keys loaded successfully!
+/content/lerobot-venv/lib/python3.12/site-packages/torch/jit/_script.py:365: DeprecationWarning: `torch.jit.script_method` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+[21:31:07] policy PI05Policy loaded from lerobot/pi05_libero_finetuned in 149s | dtype=bfloat16 chunk=50 n_action_steps=50 image_features=['observation.images.image', 'observation.images.image2', 'observation.images.empty_camera_0'] | state input to sample_actions: False
+[21:31:07] hooked 18 LLM decoder layers (MLP + residual output)
+[21:31:08] [monitor] 288/600 episodes already on disk (earlier session / restored from Drive); 312 to run
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[21:31:13] task 4: target 'akita_black_bowl_1' (via obj_of_interest) | distractor 'akita_black_bowl_2' (via same object type, 41 geoms) | other objects of interest ['plate_1'] | geoms target=41 | free_joints=1
+[21:39:22] [monitor] task 4 | covered_static        : success 4/12 | mean steps 230 | distractor lifted 0 | unwanted contact 8 | 40 s/episode | 300/600 episodes | ETA 3.3 h
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[21:39:28] task 5: target 'akita_black_bowl_1' (via obj_of_interest) | distractor 'akita_black_bowl_2' (via same object type, 41 geoms) | other objects of interest ['plate_1'] | geoms target=41 | free_joints=1
+[21:45:43] [monitor] task 5 | clean                 : success 7/12 | mean steps 176 | distractor lifted 2 | unwanted contact 6 | 31 s/episode | 312/600 episodes | ETA 2.8 h
+[21:55:10] [monitor] task 5 | covered               : success 0/12 | mean steps 280 | distractor lifted 9 | unwanted contact 12 | 46 s/episode | 324/600 episodes | ETA 3.0 h
+[22:04:36] [monitor] task 5 | screened              : success 0/12 | mean steps 280 | distractor lifted 1 | unwanted contact 11 | 46 s/episode | 336/600 episodes | ETA 3.0 h
+[22:12:32] [monitor] task 5 | cover_miss            : success 3/12 | mean steps 239 | distractor lifted 4 | unwanted contact 8 | 39 s/episode | 348/600 episodes | ETA 2.8 h
+[22:22:02] [monitor] task 5 | covered_static        : success 0/12 | mean steps 280 | distractor lifted 7 | unwanted contact 12 | 47 s/episode | 360/600 episodes | ETA 2.8 h
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[22:22:08] task 6: target 'akita_black_bowl_1' (via obj_of_interest) | distractor 'akita_black_bowl_2' (via same object type, 41 geoms) | other objects of interest ['plate_1'] | geoms target=41 | free_joints=1
+[22:26:33] [monitor] task 6 | clean                 : success 12/12 | mean steps 105 | distractor lifted 0 | unwanted contact 8 | 22 s/episode | 372/600 episodes | ETA 2.4 h
+[22:35:41] [monitor] task 6 | covered               : success 0/12 | mean steps 280 | distractor lifted 0 | unwanted contact 12 | 45 s/episode | 384/600 episodes | ETA 2.4 h
+[22:43:40] [monitor] task 6 | screened              : success 2/12 | mean steps 252 | distractor lifted 0 | unwanted contact 10 | 39 s/episode | 396/600 episodes | ETA 2.2 h
+[22:48:18] [monitor] task 6 | cover_miss            : success 12/12 | mean steps 106 | distractor lifted 0 | unwanted contact 8 | 23 s/episode | 408/600 episodes | ETA 2.0 h
+[22:57:04] [monitor] task 6 | covered_static        : success 1/12 | mean steps 265 | distractor lifted 0 | unwanted contact 9 | 43 s/episode | 420/600 episodes | ETA 1.9 h
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[22:57:10] task 7: target 'akita_black_bowl_1' (via obj_of_interest) | distractor 'akita_black_bowl_2' (via same object type, 41 geoms) | other objects of interest ['plate_1'] | geoms target=41 | free_joints=1
+[23:02:22] [monitor] task 7 | clean                 : success 11/12 | mean steps 132 | distractor lifted 0 | unwanted contact 1 | 26 s/episode | 432/600 episodes | ETA 1.7 h
+[23:11:21] [monitor] task 7 | covered               : success 1/12 | mean steps 268 | distractor lifted 0 | unwanted contact 9 | 44 s/episode | 444/600 episodes | ETA 1.6 h
+[23:16:49] [monitor] task 7 | screened              : success 11/12 | mean steps 141 | distractor lifted 0 | unwanted contact 2 | 27 s/episode | 456/600 episodes | ETA 1.5 h
+[23:22:17] [monitor] task 7 | cover_miss            : success 11/12 | mean steps 134 | distractor lifted 0 | unwanted contact 1 | 27 s/episode | 468/600 episodes | ETA 1.3 h
+[23:31:31] [monitor] task 7 | covered_static        : success 0/12 | mean steps 280 | distractor lifted 1 | unwanted contact 8 | 45 s/episode | 480/600 episodes | ETA 1.2 h
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[23:31:37] task 8: target 'akita_black_bowl_1' (via obj_of_interest) | distractor 'akita_black_bowl_2' (via same object type, 41 geoms) | other objects of interest ['plate_1'] | geoms target=41 | free_joints=1
+[23:37:40] [monitor] task 8 | clean                 : success 10/12 | mean steps 149 | distractor lifted 0 | unwanted contact 9 | 30 s/episode | 492/600 episodes | ETA 1.1 h
+[23:45:01] [monitor] task 8 | covered               : success 5/12 | mean steps 203 | distractor lifted 0 | unwanted contact 4 | 36 s/episode | 504/600 episodes | ETA 1.0 h
+[23:52:48] [monitor] task 8 | screened              : success 4/12 | mean steps 224 | distractor lifted 0 | unwanted contact 7 | 38 s/episode | 516/600 episodes | ETA 0.9 h
+[23:57:45] [monitor] task 8 | cover_miss            : success 11/12 | mean steps 125 | distractor lifted 0 | unwanted contact 11 | 24 s/episode | 528/600 episodes | ETA 0.7 h
+[00:06:52] [monitor] task 8 | covered_static        : success 2/12 | mean steps 278 | distractor lifted 0 | unwanted contact 6 | 45 s/episode | 540/600 episodes | ETA 0.6 h
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[00:06:58] task 9: target 'akita_black_bowl_1' (via obj_of_interest) | distractor 'akita_black_bowl_2' (via same object type, 41 geoms) | other objects of interest ['plate_1'] | geoms target=41 | free_joints=1
+[00:13:00] [monitor] task 9 | clean                 : success 10/12 | mean steps 144 | distractor lifted 0 | unwanted contact 0 | 30 s/episode | 552/600 episodes | ETA 0.5 h
+[00:20:43] [monitor] task 9 | covered               : success 5/12 | mean steps 214 | distractor lifted 0 | unwanted contact 4 | 38 s/episode | 564/600 episodes | ETA 0.4 h
+[00:28:25] [monitor] task 9 | screened              : success 5/12 | mean steps 213 | distractor lifted 0 | unwanted contact 2 | 38 s/episode | 576/600 episodes | ETA 0.2 h
+[00:34:27] [monitor] task 9 | cover_miss            : success 11/12 | mean steps 141 | distractor lifted 0 | unwanted contact 0 | 30 s/episode | 588/600 episodes | ETA 0.1 h
+[00:40:53] [monitor] task 9 | covered_static        : success 10/12 | mean steps 159 | distractor lifted 0 | unwanted contact 3 | 32 s/episode | 600/600 episodes | ETA 0.0 h
+[00:40:54] [monitor] block finished: 600/600 episodes on disk (312 new, 3.16 h)
+[00:40:54] == monitor finished in 11544s
+[00:40:58] == discover | out=/content/groot-run/outputs/permanence/smaj_v4
+[00:41:25] discover: close sign +1 | gripper set 16 features, held-out AUROC set 0.9952262693156733 vs proprio 0.9955757910228108 | speed held-out corr fast 0.73 slow -0.79 (current-speed baseline 0.41)
+[00:41:25] == discover finished in 27s
+[00:41:26] == steer | out=/content/groot-run/outputs/permanence/smaj_v4
+/content/lerobot-venv/lib/python3.12/site-packages/robosuite/__init__.py:7: DeprecationWarning: The 'warn' method is deprecated, use 'warning' instead
+  ROBOSUITE_DEFAULT_LOGGER.warn("No private macro file found!")
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /content/lerobot-venv/lib/python3.12/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[00:41:33] checkpoint config has compile_model=True -> disabling torch.compile (hooks need eager mode)
+WARNING:root:Vision embedding key might need handling: model.paligemma_with_expert.paligemma.model.vision_tower.vision_model.embeddings.patch_embedding.bias
+WARNING:root:Vision embedding key might need handling: model.paligemma_with_expert.paligemma.model.vision_tower.vision_model.embeddings.patch_embedding.weight
+The PI05 model is a direct port of the OpenPI implementation. 
+This implementation follows the original OpenPI structure for compatibility. 
+Original implementation: https://github.com/Physical-Intelligence/openpi
+Loading model from: lerobot/pi05_libero_finetuned
+✓ Loaded state dict from model.safetensors
+All keys loaded successfully!
+/content/lerobot-venv/lib/python3.12/site-packages/torch/jit/_script.py:365: DeprecationWarning: `torch.jit.script_method` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+[00:44:02] policy PI05Policy loaded from lerobot/pi05_libero_finetuned in 149s | dtype=bfloat16 chunk=50 n_action_steps=50 image_features=['observation.images.image', 'observation.images.image2', 'observation.images.empty_camera_0'] | state input to sample_actions: False
+[00:44:02] hooked 18 LLM decoder layers (MLP + residual output)
+[00:44:03] [steer] 0/600 episodes already on disk (earlier session / restored from Drive); 600 to run
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[00:44:09] task 0: target 'akita_black_bowl_1' (via obj_of_interest) | distractor 'akita_black_bowl_2' (via same object type, 41 geoms) | other objects of interest ['plate_1'] | geoms target=41 | free_joints=1
+[00:47:04] [steer] task 0 | base                  : success 9/10 | mean steps 110 | distractor lifted 0 | unwanted contact 0 | 18 s/episode | 10/600 episodes | ETA 2.9 h
+[00:49:31] [steer] task 0 | prompt_slow           : success 10/10 | mean steps 76 | distractor lifted 0 | unwanted contact 2 | 15 s/episode | 20/600 episodes | ETA 2.6 h
+[00:56:40] [steer] task 0 | act_scale             : success 5/10 | mean steps 318 | distractor lifted 0 | unwanted contact 2 | 43 s/episode | 30/600 episodes | ETA 4.0 h
+[00:59:37] [steer] task 0 | speed_ablate          : success 9/10 | mean steps 110 | distractor lifted 0 | unwanted contact 1 | 18 s/episode | 40/600 episodes | ETA 3.6 h
+[01:02:09] [steer] task 0 | speed_boost           : success 10/10 | mean steps 79 | distractor lifted 0 | unwanted contact 1 | 15 s/episode | 50/600 episodes | ETA 3.3 h
+[01:05:08] [steer] task 0 | speed_random          : success 9/10 | mean steps 110 | distractor lifted 0 | unwanted contact 0 | 18 s/episode | 60/600 episodes | ETA 3.1 h
+[01:08:06] [steer] task 0 | grip_ablate           : success 9/10 | mean steps 110 | distractor lifted 0 | unwanted contact 0 | 18 s/episode | 70/600 episodes | ETA 3.0 h
+[01:11:03] [steer] task 0 | grip_boost            : success 9/10 | mean steps 110 | distractor lifted 0 | unwanted contact 0 | 18 s/episode | 80/600 episodes | ETA 2.9 h
+[01:13:36] [steer] task 0 | grip_random           : success 10/10 | mean steps 81 | distractor lifted 0 | unwanted contact 0 | 15 s/episode | 90/600 episodes | ETA 2.8 h
+[01:19:58] [steer] task 0 | covered               : success 2/10 | mean steps 360 | distractor lifted 0 | unwanted contact 5 | 38 s/episode | 100/600 episodes | ETA 3.0 h
+[01:26:07] [steer] task 0 | covered_prompt_slow   : success 3/10 | mean steps 342 | distractor lifted 0 | unwanted contact 6 | 37 s/episode | 110/600 episodes | ETA 3.1 h
+[01:34:36] [steer] task 0 | covered_act_scale     : success 0/10 | mean steps 420 | distractor lifted 0 | unwanted contact 0 | 51 s/episode | 120/600 episodes | ETA 3.4 h
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[01:34:42] task 2: target 'akita_black_bowl_1' (via obj_of_interest) | distractor 'akita_black_bowl_2' (via same object type, 41 geoms) | other objects of interest ['plate_1'] | geoms target=41 | free_joints=1
+[01:37:31] [steer] task 2 | base                  : success 10/10 | mean steps 96 | distractor lifted 0 | unwanted contact 1 | 17 s/episode | 130/600 episodes | ETA 3.2 h
+[01:41:14] [steer] task 2 | prompt_slow           : success 8/10 | mean steps 160 | distractor lifted 0 | unwanted contact 2 | 22 s/episode | 140/600 episodes | ETA 3.1 h
+[01:49:46] [steer] task 2 | act_scale             : success 0/10 | mean steps 420 | distractor lifted 3 | unwanted contact 7 | 51 s/episode | 150/600 episodes | ETA 3.3 h
+[01:53:02] [steer] task 2 | speed_ablate          : success 9/10 | mean steps 127 | distractor lifted 0 | unwanted contact 1 | 20 s/episode | 160/600 episodes | ETA 3.2 h
+[01:55:53] [steer] task 2 | speed_boost           : success 10/10 | mean steps 96 | distractor lifted 0 | unwanted contact 0 | 17 s/episode | 170/600 episodes | ETA 3.0 h
+[01:58:43] [steer] task 2 | speed_random          : success 10/10 | mean steps 96 | distractor lifted 0 | unwanted contact 0 | 17 s/episode | 180/600 episodes | ETA 2.9 h
+[02:02:00] [steer] task 2 | grip_ablate           : success 9/10 | mean steps 128 | distractor lifted 0 | unwanted contact 1 | 20 s/episode | 190/600 episodes | ETA 2.8 h
+[02:05:19] [steer] task 2 | grip_boost            : success 9/10 | mean steps 128 | distractor lifted 0 | unwanted contact 1 | 20 s/episode | 200/600 episodes | ETA 2.7 h
+[02:08:10] [steer] task 2 | grip_random           : success 10/10 | mean steps 97 | distractor lifted 0 | unwanted contact 2 | 17 s/episode | 210/600 episodes | ETA 2.6 h
+[02:12:46] == steer | out=/content/groot-run/outputs/permanence/smaj_v4
+/content/lerobot-venv/lib/python3.12/site-packages/robosuite/__init__.py:7: DeprecationWarning: The 'warn' method is deprecated, use 'warning' instead
+  ROBOSUITE_DEFAULT_LOGGER.warn("No private macro file found!")
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /content/lerobot-venv/lib/python3.12/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[02:12:53] checkpoint config has compile_model=True -> disabling torch.compile (hooks need eager mode)
+WARNING:root:Vision embedding key might need handling: model.paligemma_with_expert.paligemma.model.vision_tower.vision_model.embeddings.patch_embedding.bias
+WARNING:root:Vision embedding key might need handling: model.paligemma_with_expert.paligemma.model.vision_tower.vision_model.embeddings.patch_embedding.weight
+The PI05 model is a direct port of the OpenPI implementation. 
+This implementation follows the original OpenPI structure for compatibility. 
+Original implementation: https://github.com/Physical-Intelligence/openpi
+Loading model from: lerobot/pi05_libero_finetuned
+✓ Loaded state dict from model.safetensors
+All keys loaded successfully!
+/content/lerobot-venv/lib/python3.12/site-packages/torch/jit/_script.py:365: DeprecationWarning: `torch.jit.script_method` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+[02:15:21] policy PI05Policy loaded from lerobot/pi05_libero_finetuned in 148s | dtype=bfloat16 chunk=50 n_action_steps=50 image_features=['observation.images.image', 'observation.images.image2', 'observation.images.empty_camera_0'] | state input to sample_actions: False
+[02:15:21] hooked 18 LLM decoder layers (MLP + residual output)
+[02:15:22] [steer] 214/600 episodes already on disk (earlier session / restored from Drive); 386 to run
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[02:15:28] task 2: target 'akita_black_bowl_1' (via obj_of_interest) | distractor 'akita_black_bowl_2' (via same object type, 41 geoms) | other objects of interest ['plate_1'] | geoms target=41 | free_joints=1
+[02:19:38] [steer] task 2 | covered               : success 0/6 | mean steps 420 | distractor lifted 5 | unwanted contact 6 | 42 s/episode | 220/600 episodes | ETA 4.4 h
+[02:28:18] [steer] task 2 | covered_prompt_slow   : success 0/10 | mean steps 420 | distractor lifted 8 | unwanted contact 10 | 52 s/episode | 230/600 episodes | ETA 4.9 h
+[02:36:57] [steer] task 2 | covered_act_scale     : success 0/10 | mean steps 420 | distractor lifted 7 | unwanted contact 10 | 52 s/episode | 240/600 episodes | ETA 5.0 h
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[02:37:03] task 6: target 'akita_black_bowl_1' (via obj_of_interest) | distractor 'akita_black_bowl_2' (via same object type, 41 geoms) | other objects of interest ['plate_1'] | geoms target=41 | free_joints=1
+[02:40:37] [steer] task 6 | base                  : success 9/10 | mean steps 139 | distractor lifted 0 | unwanted contact 5 | 21 s/episode | 250/600 episodes | ETA 4.1 h
+[02:44:12] [steer] task 6 | prompt_slow           : success 9/10 | mean steps 140 | distractor lifted 0 | unwanted contact 6 | 21 s/episode | 260/600 episodes | ETA 3.5 h
+[02:52:46] [steer] task 6 | act_scale             : success 0/10 | mean steps 420 | distractor lifted 0 | unwanted contact 9 | 51 s/episode | 270/600 episodes | ETA 3.7 h
+[02:56:23] [steer] task 6 | speed_ablate          : success 9/10 | mean steps 140 | distractor lifted 0 | unwanted contact 4 | 22 s/episode | 280/600 episodes | ETA 3.3 h
+[02:59:33] [steer] task 6 | speed_boost           : success 10/10 | mean steps 109 | distractor lifted 0 | unwanted contact 5 | 19 s/episode | 290/600 episodes | ETA 3.0 h
+[03:03:23] [steer] task 6 | speed_random          : success 9/10 | mean steps 155 | distractor lifted 0 | unwanted contact 5 | 23 s/episode | 300/600 episodes | ETA 2.8 h
+[03:06:46] [steer] task 6 | grip_ablate           : success 10/10 | mean steps 123 | distractor lifted 0 | unwanted contact 5 | 20 s/episode | 310/600 episodes | ETA 2.6 h
+[03:10:23] [steer] task 6 | grip_boost            : success 9/10 | mean steps 141 | distractor lifted 0 | unwanted contact 9 | 22 s/episode | 320/600 episodes | ETA 2.4 h
+[03:14:02] [steer] task 6 | grip_random           : success 9/10 | mean steps 141 | distractor lifted 0 | unwanted contact 6 | 22 s/episode | 330/600 episodes | ETA 2.3 h
+[03:22:35] [steer] task 6 | covered               : success 0/10 | mean steps 420 | distractor lifted 0 | unwanted contact 10 | 51 s/episode | 340/600 episodes | ETA 2.3 h
+[03:31:08] [steer] task 6 | covered_prompt_slow   : success 0/10 | mean steps 420 | distractor lifted 0 | unwanted contact 10 | 51 s/episode | 350/600 episodes | ETA 2.3 h
+[03:39:40] [steer] task 6 | covered_act_scale     : success 0/10 | mean steps 420 | distractor lifted 0 | unwanted contact 2 | 51 s/episode | 360/600 episodes | ETA 2.3 h
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[03:39:46] task 7: target 'akita_black_bowl_1' (via obj_of_interest) | distractor 'akita_black_bowl_2' (via same object type, 41 geoms) | other objects of interest ['plate_1'] | geoms target=41 | free_joints=1
+[03:43:14] [steer] task 7 | base                  : success 10/10 | mean steps 121 | distractor lifted 0 | unwanted contact 0 | 21 s/episode | 370/600 episodes | ETA 2.1 h
+[03:46:43] [steer] task 7 | prompt_slow           : success 10/10 | mean steps 120 | distractor lifted 0 | unwanted contact 0 | 21 s/episode | 380/600 episodes | ETA 2.0 h
+[03:55:40] [steer] task 7 | act_scale             : success 0/10 | mean steps 420 | distractor lifted 0 | unwanted contact 2 | 54 s/episode | 390/600 episodes | ETA 2.0 h
+[03:59:10] [steer] task 7 | speed_ablate          : success 10/10 | mean steps 120 | distractor lifted 0 | unwanted contact 0 | 21 s/episode | 400/600 episodes | ETA 1.9 h
+[04:02:40] [steer] task 7 | speed_boost           : success 10/10 | mean steps 120 | distractor lifted 0 | unwanted contact 0 | 21 s/episode | 410/600 episodes | ETA 1.7 h
+[04:06:11] [steer] task 7 | speed_random          : success 10/10 | mean steps 120 | distractor lifted 0 | unwanted contact 0 | 21 s/episode | 420/600 episodes | ETA 1.6 h
+[04:09:44] [steer] task 7 | grip_ablate           : success 10/10 | mean steps 120 | distractor lifted 0 | unwanted contact 0 | 21 s/episode | 430/600 episodes | ETA 1.5 h
+[04:13:17] [steer] task 7 | grip_boost            : success 10/10 | mean steps 121 | distractor lifted 0 | unwanted contact 0 | 21 s/episode | 440/600 episodes | ETA 1.4 h
+[04:16:49] [steer] task 7 | grip_random           : success 10/10 | mean steps 119 | distractor lifted 0 | unwanted contact 0 | 21 s/episode | 450/600 episodes | ETA 1.3 h
+[04:25:15] [steer] task 7 | covered               : success 1/10 | mean steps 392 | distractor lifted 0 | unwanted contact 7 | 51 s/episode | 460/600 episodes | ETA 1.2 h
+[04:33:23] [steer] task 7 | covered_prompt_slow   : success 2/10 | mean steps 374 | distractor lifted 0 | unwanted contact 7 | 49 s/episode | 470/600 episodes | ETA 1.2 h
+[04:42:11] [steer] task 7 | covered_act_scale     : success 0/10 | mean steps 420 | distractor lifted 0 | unwanted contact 7 | 53 s/episode | 480/600 episodes | ETA 1.1 h
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[04:42:17] task 9: target 'akita_black_bowl_1' (via obj_of_interest) | distractor 'akita_black_bowl_2' (via same object type, 41 geoms) | other objects of interest ['plate_1'] | geoms target=41 | free_joints=1
+[04:47:42] [steer] task 9 | base                  : success 5/10 | mean steps 270 | distractor lifted 0 | unwanted contact 3 | 32 s/episode | 490/600 episodes | ETA 1.0 h
+[04:53:08] [steer] task 9 | prompt_slow           : success 5/10 | mean steps 268 | distractor lifted 0 | unwanted contact 2 | 33 s/episode | 500/600 episodes | ETA 0.9 h
+[05:01:54] [steer] task 9 | act_scale             : success 0/10 | mean steps 420 | distractor lifted 0 | unwanted contact 0 | 53 s/episode | 510/600 episodes | ETA 0.8 h
+[05:06:59] [steer] task 9 | speed_ablate          : success 6/10 | mean steps 238 | distractor lifted 0 | unwanted contact 3 | 30 s/episode | 520/600 episodes | ETA 0.7 h
+[05:12:30] [steer] task 9 | speed_boost           : success 5/10 | mean steps 269 | distractor lifted 0 | unwanted contact 3 | 33 s/episode | 530/600 episodes | ETA 0.7 h
+[05:18:00] [steer] task 9 | speed_random          : success 5/10 | mean steps 270 | distractor lifted 0 | unwanted contact 5 | 33 s/episode | 540/600 episodes | ETA 0.6 h
+[05:23:29] [steer] task 9 | grip_ablate           : success 5/10 | mean steps 270 | distractor lifted 0 | unwanted contact 5 | 33 s/episode | 550/600 episodes | ETA 0.5 h
+[05:28:34] [steer] task 9 | grip_boost            : success 6/10 | mean steps 239 | distractor lifted 0 | unwanted contact 4 | 30 s/episode | 560/600 episodes | ETA 0.4 h
+[05:34:04] [steer] task 9 | grip_random           : success 5/10 | mean steps 268 | distractor lifted 0 | unwanted contact 2 | 33 s/episode | 570/600 episodes | ETA 0.3 h
+[05:41:38] [steer] task 9 | covered               : success 3/10 | mean steps 330 | distractor lifted 0 | unwanted contact 3 | 45 s/episode | 580/600 episodes | ETA 0.2 h
+[05:49:39] [steer] task 9 | covered_prompt_slow   : success 2/10 | mean steps 359 | distractor lifted 0 | unwanted contact 4 | 48 s/episode | 590/600 episodes | ETA 0.1 h
+[05:58:24] [steer] task 9 | covered_act_scale     : success 0/10 | mean steps 420 | distractor lifted 0 | unwanted contact 3 | 52 s/episode | 600/600 episodes | ETA 0.0 h
+[05:58:25] [steer] block finished: 600/600 episodes on disk (386 new, 3.72 h)
+[05:58:25] == steer finished in 13540s
+[08:39:10] == analyze | out=/content/groot-run/outputs/permanence/smaj_v4
+[08:39:19] E2: clean 58/60, covered 10/60, restore_mlp 59/60, restore_attr 8/60, restore_random 8/60, inject_attr 60/60, restore_sel 11/60, restore_mlp_L0_13 58/60, restore_sel_top100 10/60, restore_attr_k300 18/60, restore_attr_k1000 18/60, restore_random_k1000 12/60, restore_random_k300 8/60
+[09:31:51] E3 window 0: n=600 fail=314 | simple 0.76, cover_sel 0.87, simple+cover_sel 0.85, cover_attr 0.86, simple+cover_attr 0.86, cover_sel_top100 0.86, simple+cover_sel_top100 0.85, cover_sel_all 0.85, simple+cover_sel_all 0.85, screen_sel 0.84, simple+screen_sel 0.82, visibility 0.84, simple+visibility 0.90, sae_all 0.88, simple+sae_all 0.87, dense 0.84, simple+dense 0.86
+[10:17:58] == sets: already finished -> skipped (--resume)
+[10:17:58] == smoke: already finished -> skipped (--resume)
+[10:18:00] == reanalyze | out=/content/groot-run/outputs/permanence/smaj_v4
+[10:18:09] E0: clean 58/60 lifted 0 RMST 109, covered 10/60 lifted 7 RMST 255, screened 33/60 lifted 0 RMST 193, painted 44/60 lifted 5 RMST 157, restore_mlp 59/60 lifted 0 RMST 108, restore_attr 8/60 lifted 6 RMST 262, restore_random 8/60 lifted 7 RMST 260, inject_attr 60/60 lifted 0 RMST 105, restore_sel 11/60 lifted 7 RMST 254
+[10:18:09] == reanalyze finished in 8s
+[10:18:10] == controls | out=/content/groot-run/outputs/permanence/smaj_v4
+/content/lerobot-venv/lib/python3.12/site-packages/robosuite/__init__.py:33: SyntaxWarning: invalid escape sequence '\ '
+  /[_]\  [~]\/    |//  |
+/content/lerobot-venv/lib/python3.12/site-packages/robosuite/__init__.py:7: DeprecationWarning: The 'warn' method is deprecated, use 'warning' instead
+  ROBOSUITE_DEFAULT_LOGGER.warn("No private macro file found!")
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /content/lerobot-venv/lib/python3.12/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[10:18:26] checkpoint config has compile_model=True -> disabling torch.compile (hooks need eager mode)
+WARNING:root:Vision embedding key might need handling: model.paligemma_with_expert.paligemma.model.vision_tower.vision_model.embeddings.patch_embedding.bias
+WARNING:root:Vision embedding key might need handling: model.paligemma_with_expert.paligemma.model.vision_tower.vision_model.embeddings.patch_embedding.weight
+The PI05 model is a direct port of the OpenPI implementation. 
+This implementation follows the original OpenPI structure for compatibility. 
+Original implementation: https://github.com/Physical-Intelligence/openpi
+Loading model from: lerobot/pi05_libero_finetuned
+✓ Loaded state dict from model.safetensors
+All keys loaded successfully!
+/content/lerobot-venv/lib/python3.12/site-packages/torch/jit/_script.py:365: DeprecationWarning: `torch.jit.script_method` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+[10:21:00] policy PI05Policy loaded from lerobot/pi05_libero_finetuned in 154s | dtype=bfloat16 chunk=50 n_action_steps=50 image_features=['observation.images.image', 'observation.images.image2', 'observation.images.empty_camera_0'] | state input to sample_actions: False
+[10:21:00] hooked 18 LLM decoder layers (MLP + residual output)
+[10:21:01] [controls] 360/360 episodes already on disk (earlier session / restored from Drive); 0 to run
+[10:21:01] [controls] nothing to run: every episode of this block is finished
+[10:21:01] [controls] block finished: 360/360 episodes on disk (0 new, 0.00 h)
+[10:21:01] == controls finished in 171s
+[10:21:04] == analyze_controls | out=/content/groot-run/outputs/permanence/smaj_v4
+[10:21:13] E2: clean 58/60, covered 10/60, restore_mlp 59/60, restore_attr 8/60, restore_random 8/60, inject_attr 60/60, restore_sel 11/60, restore_mlp_L0_13 58/60, restore_sel_top100 10/60, restore_attr_k300 18/60, restore_attr_k1000 18/60, restore_random_k1000 12/60, restore_random_k300 8/60
+[10:21:13] == analyze_controls finished in 9s
+[10:21:14] == monitor | out=/content/groot-run/outputs/permanence/smaj_v4
+/content/lerobot-venv/lib/python3.12/site-packages/robosuite/__init__.py:7: DeprecationWarning: The 'warn' method is deprecated, use 'warning' instead
+  ROBOSUITE_DEFAULT_LOGGER.warn("No private macro file found!")
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /content/lerobot-venv/lib/python3.12/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[10:21:21] checkpoint config has compile_model=True -> disabling torch.compile (hooks need eager mode)
+WARNING:root:Vision embedding key might need handling: model.paligemma_with_expert.paligemma.model.vision_tower.vision_model.embeddings.patch_embedding.bias
+WARNING:root:Vision embedding key might need handling: model.paligemma_with_expert.paligemma.model.vision_tower.vision_model.embeddings.patch_embedding.weight
+The PI05 model is a direct port of the OpenPI implementation. 
+This implementation follows the original OpenPI structure for compatibility. 
+Original implementation: https://github.com/Physical-Intelligence/openpi
+Loading model from: lerobot/pi05_libero_finetuned
+✓ Loaded state dict from model.safetensors
+All keys loaded successfully!
+/content/lerobot-venv/lib/python3.12/site-packages/torch/jit/_script.py:365: DeprecationWarning: `torch.jit.script_method` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+[10:23:52] policy PI05Policy loaded from lerobot/pi05_libero_finetuned in 150s | dtype=bfloat16 chunk=50 n_action_steps=50 image_features=['observation.images.image', 'observation.images.image2', 'observation.images.empty_camera_0'] | state input to sample_actions: False
+[10:23:52] hooked 18 LLM decoder layers (MLP + residual output)
+[10:23:52] [monitor] 600/600 episodes already on disk (earlier session / restored from Drive); 0 to run
+[10:23:52] [monitor] nothing to run: every episode of this block is finished
+[10:23:52] [monitor] block finished: 600/600 episodes on disk (0 new, 0.00 h)
+[10:23:52] == monitor finished in 158s
+[10:23:55] == discover | out=/content/groot-run/outputs/permanence/smaj_v4
+Traceback (most recent call last):
+  File "/content/groot-run/scripts/smaj_v4.py", line 2544, in <module>
+    main()
+  File "/content/groot-run/scripts/smaj_v4.py", line 2528, in main
+    COMMANDS[c]()
+  File "/content/groot-run/scripts/smaj_v4.py", line 1421, in cmd_discover
+    from sklearn.metrics import roc_auc_score
+ModuleNotFoundError: No module named 'sklearn'
+[10:24:14] == steer | out=/content/groot-run/outputs/permanence/smaj_v4
+/content/lerobot-venv/lib/python3.12/site-packages/robosuite/__init__.py:7: DeprecationWarning: The 'warn' method is deprecated, use 'warning' instead
+  ROBOSUITE_DEFAULT_LOGGER.warn("No private macro file found!")
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /content/lerobot-venv/lib/python3.12/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[10:24:21] checkpoint config has compile_model=True -> disabling torch.compile (hooks need eager mode)
+WARNING:root:Vision embedding key might need handling: model.paligemma_with_expert.paligemma.model.vision_tower.vision_model.embeddings.patch_embedding.bias
+WARNING:root:Vision embedding key might need handling: model.paligemma_with_expert.paligemma.model.vision_tower.vision_model.embeddings.patch_embedding.weight
+The PI05 model is a direct port of the OpenPI implementation. 
+This implementation follows the original OpenPI structure for compatibility. 
+Original implementation: https://github.com/Physical-Intelligence/openpi
+Loading model from: lerobot/pi05_libero_finetuned
+✓ Loaded state dict from model.safetensors
+All keys loaded successfully!
+/content/lerobot-venv/lib/python3.12/site-packages/torch/jit/_script.py:365: DeprecationWarning: `torch.jit.script_method` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+[10:26:51] policy PI05Policy loaded from lerobot/pi05_libero_finetuned in 150s | dtype=bfloat16 chunk=50 n_action_steps=50 image_features=['observation.images.image', 'observation.images.image2', 'observation.images.empty_camera_0'] | state input to sample_actions: False
+[10:26:51] hooked 18 LLM decoder layers (MLP + residual output)
+[10:26:51] [steer] 600/600 episodes already on disk (earlier session / restored from Drive); 0 to run
+[10:26:51] [steer] nothing to run: every episode of this block is finished
+[10:26:51] [steer] block finished: 600/600 episodes on disk (0 new, 0.00 h)
+[10:26:51] == steer finished in 158s
+[13:01:39] == sets: already finished -> skipped (--resume)
+[13:01:39] == smoke: already finished -> skipped (--resume)
+[13:01:40] == reanalyze | out=/content/groot-run/outputs/permanence/smaj_v4
+[13:01:48] E0: clean 58/60 lifted 0 RMST 109, covered 10/60 lifted 7 RMST 255, screened 33/60 lifted 0 RMST 193, painted 44/60 lifted 5 RMST 157, restore_mlp 59/60 lifted 0 RMST 108, restore_attr 8/60 lifted 6 RMST 262, restore_random 8/60 lifted 7 RMST 260, inject_attr 60/60 lifted 0 RMST 105, restore_sel 11/60 lifted 7 RMST 254
+[13:01:48] == reanalyze finished in 8s
+[13:01:49] == controls | out=/content/groot-run/outputs/permanence/smaj_v4
+/content/lerobot-venv/lib/python3.12/site-packages/robosuite/__init__.py:33: SyntaxWarning: invalid escape sequence '\ '
+  /[_]\  [~]\/    |//  |
+Traceback (most recent call last):
+  File "/content/lerobot-venv/lib/python3.12/site-packages/robosuite/__init__.py", line 2, in <module>
+    from robosuite.macros_private import *
+ModuleNotFoundError: No module named 'robosuite.macros_private'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/content/groot-run/scripts/smaj_v4.py", line 2544, in <module>
+    main()
+  File "/content/groot-run/scripts/smaj_v4.py", line 2528, in main
+    COMMANDS[c]()
+  File "/content/groot-run/scripts/smaj_v4.py", line 792, in cmd_controls
+    ctx = gpu()
+          ^^^^^
+  File "/content/groot-run/scripts/smaj_v4.py", line 329, in gpu
+    V.install_occluders()
+  File "/content/groot-run/scripts/tc_occlusion_v3.py", line 467, in install_occluders
+    import robosuite.utils.binding_utils as bu
+  File "/content/lerobot-venv/lib/python3.12/site-packages/robosuite/__init__.py", line 5, in <module>
+    from robosuite.utils.log_utils import ROBOSUITE_DEFAULT_LOGGER
+  File "/content/lerobot-venv/lib/python3.12/site-packages/robosuite/utils/__init__.py", line 3, in <module>
+    from .opencv_renderer import OpenCVRenderer
+  File "/content/lerobot-venv/lib/python3.12/site-packages/robosuite/utils/opencv_renderer.py", line 4, in <module>
+    import cv2
+  File "/content/lerobot-venv/lib/python3.12/site-packages/cv2/__init__.py", line 181, in <module>
+    bootstrap()
+  File "/content/lerobot-venv/lib/python3.12/site-packages/cv2/__init__.py", line 175, in bootstrap
+    if __load_extra_py_code_for_module("cv2", submodule, DEBUG):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/content/lerobot-venv/lib/python3.12/site-packages/cv2/__init__.py", line 28, in __load_extra_py_code_for_module
+    py_module = importlib.import_module(module_name)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/content/lerobot-venv/lib/python3.12/site-packages/cv2/gapi/__init__.py", line 323, in <module>
+    cv.gapi.wip.GStreamerPipeline = cv.gapi_wip_gst_GStreamerPipeline
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: partially initialized module 'cv2' has no attribute 'gapi_wip_gst_GStreamerPipeline' (most likely due to a circular import)
+[13:01:56] == analyze_controls | out=/content/groot-run/outputs/permanence/smaj_v4
+[13:02:05] E2: clean 58/60, covered 10/60, restore_mlp 59/60, restore_attr 8/60, restore_random 8/60, inject_attr 60/60, restore_sel 11/60, restore_mlp_L0_13 58/60, restore_sel_top100 10/60, restore_attr_k300 18/60, restore_attr_k1000 18/60, restore_random_k1000 12/60, restore_random_k300 8/60
+[13:02:05] == analyze_controls finished in 9s
+[13:02:06] == monitor | out=/content/groot-run/outputs/permanence/smaj_v4
+Traceback (most recent call last):
+  File "/content/lerobot-venv/lib/python3.12/site-packages/robosuite/__init__.py", line 2, in <module>
+    from robosuite.macros_private import *
+ModuleNotFoundError: No module named 'robosuite.macros_private'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/content/groot-run/scripts/smaj_v4.py", line 2544, in <module>
+    main()
+  File "/content/groot-run/scripts/smaj_v4.py", line 2528, in main
+    COMMANDS[c]()
+  File "/content/groot-run/scripts/smaj_v4.py", line 827, in cmd_monitor
+    gpu()
+  File "/content/groot-run/scripts/smaj_v4.py", line 329, in gpu
+    V.install_occluders()
+  File "/content/groot-run/scripts/tc_occlusion_v3.py", line 467, in install_occluders
+    import robosuite.utils.binding_utils as bu
+  File "/content/lerobot-venv/lib/python3.12/site-packages/robosuite/__init__.py", line 5, in <module>
+    from robosuite.utils.log_utils import ROBOSUITE_DEFAULT_LOGGER
+  File "/content/lerobot-venv/lib/python3.12/site-packages/robosuite/utils/__init__.py", line 3, in <module>
+    from .opencv_renderer import OpenCVRenderer
+  File "/content/lerobot-venv/lib/python3.12/site-packages/robosuite/utils/opencv_renderer.py", line 4, in <module>
+    import cv2
+  File "/content/lerobot-venv/lib/python3.12/site-packages/cv2/__init__.py", line 181, in <module>
+    bootstrap()
+  File "/content/lerobot-venv/lib/python3.12/site-packages/cv2/__init__.py", line 175, in bootstrap
+    if __load_extra_py_code_for_module("cv2", submodule, DEBUG):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/content/lerobot-venv/lib/python3.12/site-packages/cv2/__init__.py", line 28, in __load_extra_py_code_for_module
+    py_module = importlib.import_module(module_name)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/content/lerobot-venv/lib/python3.12/site-packages/cv2/gapi/__init__.py", line 323, in <module>
+    cv.gapi.wip.GStreamerPipeline = cv.gapi_wip_gst_GStreamerPipeline
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: partially initialized module 'cv2' has no attribute 'gapi_wip_gst_GStreamerPipeline' (most likely due to a circular import)
+[13:02:10] == discover | out=/content/groot-run/outputs/permanence/smaj_v4
+[13:02:38] discover: steering episodes already exist -> steer_sets.json is kept frozen (diagnostics are refreshed only)
+[13:02:39] discover: close sign +1 | gripper set 16 features, held-out AUROC set 0.9952262693156733 vs proprio 0.9955757910228108 | speed held-out corr fast 0.73 slow -0.79 (current-speed baseline 0.41)
+[13:02:39] == discover finished in 29s
+[13:02:41] == steer | out=/content/groot-run/outputs/permanence/smaj_v4
+Traceback (most recent call last):
+  File "/content/lerobot-venv/lib/python3.12/site-packages/robosuite/__init__.py", line 2, in <module>
+    from robosuite.macros_private import *
+ModuleNotFoundError: No module named 'robosuite.macros_private'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/content/groot-run/scripts/smaj_v4.py", line 2544, in <module>
+    main()
+  File "/content/groot-run/scripts/smaj_v4.py", line 2528, in main
+    COMMANDS[c]()
+  File "/content/groot-run/scripts/smaj_v4.py", line 948, in cmd_steer
+    ctx = gpu()
+          ^^^^^
+  File "/content/groot-run/scripts/smaj_v4.py", line 329, in gpu
+    V.install_occluders()
+  File "/content/groot-run/scripts/tc_occlusion_v3.py", line 467, in install_occluders
+    import robosuite.utils.binding_utils as bu
+  File "/content/lerobot-venv/lib/python3.12/site-packages/robosuite/__init__.py", line 5, in <module>
+    from robosuite.utils.log_utils import ROBOSUITE_DEFAULT_LOGGER
+  File "/content/lerobot-venv/lib/python3.12/site-packages/robosuite/utils/__init__.py", line 3, in <module>
+    from .opencv_renderer import OpenCVRenderer
+  File "/content/lerobot-venv/lib/python3.12/site-packages/robosuite/utils/opencv_renderer.py", line 4, in <module>
+    import cv2
+  File "/content/lerobot-venv/lib/python3.12/site-packages/cv2/__init__.py", line 181, in <module>
+    bootstrap()
+  File "/content/lerobot-venv/lib/python3.12/site-packages/cv2/__init__.py", line 175, in bootstrap
+    if __load_extra_py_code_for_module("cv2", submodule, DEBUG):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/content/lerobot-venv/lib/python3.12/site-packages/cv2/__init__.py", line 28, in __load_extra_py_code_for_module
+    py_module = importlib.import_module(module_name)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/content/lerobot-venv/lib/python3.12/site-packages/cv2/gapi/__init__.py", line 323, in <module>
+    cv.gapi.wip.GStreamerPipeline = cv.gapi_wip_gst_GStreamerPipeline
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: partially initialized module 'cv2' has no attribute 'gapi_wip_gst_GStreamerPipeline' (most likely due to a circular import)
+[13:03:21] == analyze | out=/content/groot-run/outputs/permanence/smaj_v4
+[13:03:30] E2: clean 58/60, covered 10/60, restore_mlp 59/60, restore_attr 8/60, restore_random 8/60, inject_attr 60/60, restore_sel 11/60, restore_mlp_L0_13 58/60, restore_sel_top100 10/60, restore_attr_k300 18/60, restore_attr_k1000 18/60, restore_random_k1000 12/60, restore_random_k300 8/60
+[13:55:11] E3 window 0: n=600 fail=314 | simple 0.76, cover_sel 0.87, simple+cover_sel 0.85, cover_attr 0.86, simple+cover_attr 0.86, cover_sel_top100 0.86, simple+cover_sel_top100 0.85, cover_sel_all 0.85, simple+cover_sel_all 0.85, screen_sel 0.84, simple+screen_sel 0.82, visibility 0.84, simple+visibility 0.90, sae_all 0.88, simple+sae_all 0.87, dense 0.84, simple+dense 0.86

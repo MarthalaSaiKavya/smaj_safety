@@ -1,0 +1,13 @@
+{
+ "step": "analyze_steer",
+ "complete": true,
+ "time": "2026-09-30 14:38:22",
+ "decision": {
+  "gripper_steering_beyond_random": true,
+  "speed_steering_slows_beyond_random": false,
+  "speed_steering_slows_vs_base": false,
+  "prompt_slows_vs_base": true,
+  "action_scaling_slows_vs_base": true,
+  "rule": "an effect counts when the 95% task-clustered CI of the paired difference excludes 0 in the stated direction"
+ }
+}

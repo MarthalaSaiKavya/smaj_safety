@@ -1,0 +1,126 @@
+{
+ "step": "smoke",
+ "complete": true,
+ "time": "2026-09-29 21:25:28",
+ "task": 0,
+ "monitor_arrays": {
+  "init_state": [
+   92
+  ],
+  "eef_pos": [
+   40,
+   3
+  ],
+  "eef_quat": [
+   40,
+   4
+  ],
+  "grip_qpos": [
+   40,
+   2
+  ],
+  "joint_vel": [
+   40,
+   7
+  ],
+  "action": [
+   40,
+   7
+  ],
+  "infer": [
+   40
+  ],
+  "target_z": [
+   40
+  ],
+  "dist_z": [
+   40
+  ],
+  "contacts": [
+   40,
+   7
+  ],
+  "probe_t": [
+   5
+  ],
+  "vis": [
+   5,
+   5
+  ],
+  "full": [
+   5,
+   5,
+   5,
+   4096
+  ],
+  "bank": [
+   5,
+   5,
+   2361
+  ],
+  "dense": [
+   5,
+   5,
+   2,
+   2048
+  ]
+ },
+ "visible_target_px_clean_vs_box": [
+  769,
+  0
+ ],
+ "occ_info": {
+  "0|clean|0": {},
+  "0|covered|0": {},
+  "0|cover_miss|0": {
+   "miss_offset_m": [
+    0.17088617066582074,
+    0.1708861706658207,
+    0.0
+   ],
+   "miss_tag": "clear"
+  },
+  "0|covered_static|0": {
+   "static_offset_m": [
+    0.011512858433713063,
+    -0.01935149183563871,
+    0.0
+   ],
+   "static_half_m": [
+    0.14500172410656423,
+    0.14500172410656423,
+    0.09666781607104274
+   ]
+  },
+  "0|screened|0": {}
+ },
+ "contact_info": {
+  "n_robot_geoms": 70,
+  "n_target_geoms": 41,
+  "n_object_geoms": 80,
+  "n_finger_geoms": 8,
+  "n_left": 3,
+  "n_right": 3
+ },
+ "steer_relative_intervention_norm": {
+  "base": null,
+  "ablate": 0.016259547726284445,
+  "boost": 0.9774397909641266,
+  "random": 0.8465465770236084,
+  "prompt": null,
+  "scale": null
+ },
+ "timing": {
+  "seconds_per_step_with_probes": 0.36681588590145114,
+  "seconds_per_step_without_probes": 0.05569026470184326,
+  "reset_seconds_per_episode": 6.1606080532073975,
+  "probe_stride": 8,
+  "note": "smoke episodes also write a video every step, so these are upper bounds"
+ },
+ "runtime_estimate_h": {
+  "E3_monitor_h": 12.6,
+  "E2_controls_h": 2.0,
+  "E5_steer_h": 8.4
+ },
+ "seconds_other_blocks": 85.6668267250061
+}

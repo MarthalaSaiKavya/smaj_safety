@@ -1,0 +1,38 @@
+{
+ "step": "steer",
+ "complete": true,
+ "time": "2026-09-30 10:26:51",
+ "conds": [
+  "base",
+  "prompt_slow",
+  "act_scale",
+  "speed_ablate",
+  "speed_boost",
+  "speed_random",
+  "grip_ablate",
+  "grip_boost",
+  "grip_random",
+  "covered",
+  "covered_prompt_slow",
+  "covered_act_scale"
+ ],
+ "tasks": [
+  0,
+  2,
+  6,
+  7,
+  9
+ ],
+ "inits": [
+  32,
+  33,
+  34,
+  35,
+  36,
+  37,
+  38,
+  39,
+  40,
+  41
+ ]
+}

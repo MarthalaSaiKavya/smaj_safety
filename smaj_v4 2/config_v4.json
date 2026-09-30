@@ -1,0 +1,144 @@
+{
+ "main_out": "/content/groot-run/outputs/permanence/tc_circuit_v3_main",
+ "seed": 0,
+ "preset": "full",
+ "controls": {
+  "tasks": [
+   0,
+   2,
+   6,
+   7,
+   9
+  ],
+  "init_offset": 0,
+  "n_init": 12,
+  "conds": [
+   "restore_mlp_L0_13",
+   "restore_sel_top100",
+   "restore_attr_k300",
+   "restore_attr_k1000",
+   "restore_random_k1000",
+   "restore_random_k300"
+  ],
+  "attr_ks": [
+   300,
+   1000
+  ],
+  "layer_matched": "0-13",
+  "max_steps": 0,
+  "videos": 1
+ },
+ "monitor": {
+  "tasks": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9
+  ],
+  "conds": [
+   "clean",
+   "covered",
+   "screened",
+   "cover_miss",
+   "covered_static"
+  ],
+  "init_offset": 12,
+  "n_init": 12,
+  "probe_stride": 8,
+  "full_layers": [
+   3,
+   6,
+   9,
+   12,
+   15
+  ],
+  "static_jitter": 0.5,
+  "max_steps": 0,
+  "videos": 1
+ },
+ "discover": {
+  "conds": [
+   "clean",
+   "cover_miss"
+  ],
+  "grip_window": 16,
+  "speed_horizon": 16,
+  "n_grip": 16,
+  "n_speed": 16,
+  "grip_min_coverage": 0.8,
+  "speed_min_active": 0.3
+ },
+ "steer": {
+  "tasks": [
+   0,
+   2,
+   6,
+   7,
+   9
+  ],
+  "conds": [
+   "base",
+   "prompt_slow",
+   "act_scale",
+   "speed_ablate",
+   "speed_boost",
+   "speed_random",
+   "grip_ablate",
+   "grip_boost",
+   "grip_random",
+   "covered",
+   "covered_prompt_slow",
+   "covered_act_scale"
+  ],
+  "init_offset": 32,
+  "n_init": 10,
+  "max_steps": 420,
+  "probe_stride": 16,
+  "prompt_slow": "{task} slowly and carefully",
+  "act_scale": 0.5,
+  "grip_alpha": 1.0,
+  "speed_alpha": 1.0,
+  "videos": 1
+ },
+ "analysis": {
+  "n_boot": 5000,
+  "n_boot_monitor": 1000,
+  "n_random_sets": 5,
+  "windows": [
+   0,
+   24,
+   48,
+   80
+  ],
+  "primary_window": 48,
+  "primary_family": "cover_sel",
+  "fpr": 0.1,
+  "event_horizon": 32,
+  "contact_force_n": 1.0,
+  "min_events": 8,
+  "min_class_within": 5,
+  "Cs": [
+   0.01,
+   0.1,
+   1.0
+  ],
+  "pca_dim": 128,
+  "train_conds": [
+   "clean",
+   "covered",
+   "cover_miss"
+  ],
+  "test_conds": [
+   "screened",
+   "covered_static"
+  ],
+  "events_use_sae": true
+ },
+ "bigdict_out": "/content/groot-run/outputs/permanence/tc_circuit_v3_main_bigdict"
+}

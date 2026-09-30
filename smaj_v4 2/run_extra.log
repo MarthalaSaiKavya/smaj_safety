@@ -1,0 +1,68 @@
+[13:03:04] == planned
+
+E4b · features vs the already-planned action chunk (held-out episodes):
+{
+ "note": "planned = actions of the current chunk known at the probe (up to the next inference); held-out = odd initial states",
+ "speed": {
+  "n_heldout_rows": 1723,
+  "corr_planned_chunk": 0.9186635101889843,
+  "corr_current_speed": 0.40912654048198765,
+  "speed_fast": {
+   "corr": 0.7291078098288427,
+   "partial_corr_given_planned_current_task": 0.4468467722908908
+  },
+  "speed_slow": {
+   "corr": -0.7944876561802047,
+   "partial_corr_given_planned_current_task": -0.4662859944856558
+  }
+ },
+ "grip": {
+  "n_heldout_rows": 693,
+  "n_pos": 240,
+  "auroc_planned_chunk": 0.9708333333333333,
+  "auroc_feature_set": 0.9952262693156733,
+  "auroc_feature_set_when_chunk_has_no_close": 0.9646799116997792
+ }
+}
+[13:03:16] == dose
+Traceback (most recent call last):
+  File "/content/lerobot-venv/lib/python3.12/site-packages/robosuite/__init__.py", line 2, in <module>
+    from robosuite.macros_private import *
+ModuleNotFoundError: No module named 'robosuite.macros_private'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/content/groot-run/scripts/smaj_v4_extra.py", line 249, in <module>
+    {"planned": cmd_planned, "dose": lambda: cmd_dose(doses), "analyze": cmd_analyze}[c]()
+  File "/content/groot-run/scripts/smaj_v4_extra.py", line 249, in <lambda>
+    {"planned": cmd_planned, "dose": lambda: cmd_dose(doses), "analyze": cmd_analyze}[c]()
+                                             ^^^^^^^^^^^^^^^
+  File "/content/groot-run/scripts/smaj_v4_extra.py", line 54, in cmd_dose
+    ctx = S.gpu()
+          ^^^^^^^
+  File "/content/groot-run/scripts/smaj_v4.py", line 329, in gpu
+    V.install_occluders()
+  File "/content/groot-run/scripts/tc_occlusion_v3.py", line 467, in install_occluders
+    import robosuite.utils.binding_utils as bu
+  File "/content/lerobot-venv/lib/python3.12/site-packages/robosuite/__init__.py", line 5, in <module>
+    from robosuite.utils.log_utils import ROBOSUITE_DEFAULT_LOGGER
+  File "/content/lerobot-venv/lib/python3.12/site-packages/robosuite/utils/__init__.py", line 3, in <module>
+    from .opencv_renderer import OpenCVRenderer
+  File "/content/lerobot-venv/lib/python3.12/site-packages/robosuite/utils/opencv_renderer.py", line 4, in <module>
+    import cv2
+  File "/content/lerobot-venv/lib/python3.12/site-packages/cv2/__init__.py", line 181, in <module>
+    bootstrap()
+  File "/content/lerobot-venv/lib/python3.12/site-packages/cv2/__init__.py", line 175, in bootstrap
+    if __load_extra_py_code_for_module("cv2", submodule, DEBUG):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/content/lerobot-venv/lib/python3.12/site-packages/cv2/__init__.py", line 28, in __load_extra_py_code_for_module
+    py_module = importlib.import_module(module_name)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/content/lerobot-venv/lib/python3.12/site-packages/cv2/gapi/__init__.py", line 323, in <module>
+    cv.gapi.wip.GStreamerPipeline = cv.gapi_wip_gst_GStreamerPipeline
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: partially initialized module 'cv2' has no attribute 'gapi_wip_gst_GStreamerPipeline' (most likely due to a circular import)

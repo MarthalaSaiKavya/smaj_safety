@@ -1,0 +1,20 @@
+\begin{table}[t]
+\centering\small
+\caption{Closed-loop behaviour of the v3 conditions (5 tasks $\times$ 12 paired initial states). RMST: restricted mean completion time, failures counted at the step limit.}
+\label{tab_E0_behaviour}
+\begin{tabular}{l c c c c}
+\toprule
+condition & success & 95\% CI & RMST & distractor lifted \\
+\midrule
+clean & 58/60 &  [0.89, 0.99] & 109 & 0/60 \\
+covered & 10/60 &  [0.09, 0.28] & 255 & 7/60 \\
+screened & 33/60 &  [0.42, 0.67] & 193 & 0/60 \\
+painted & 44/60 &  [0.61, 0.83] & 157 & 5/60 \\
+restore mlp & 59/60 &  [0.91, 1.00] & 108 & 0/60 \\
+restore attr & 8/60 &  [0.07, 0.24] & 262 & 6/60 \\
+restore random & 8/60 &  [0.07, 0.24] & 260 & 7/60 \\
+inject attr & 60/60 &  [0.94, 1.00] & 105 & 0/60 \\
+restore sel & 11/60 &  [0.11, 0.30] & 254 & 7/60 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,16 @@
+{
+ "step": "sets",
+ "complete": true,
+ "time": "2026-09-29 13:07:10",
+ "sizes": {
+  "cover_sel": 129,
+  "cover_sel_all": 452,
+  "cover_attr": 100,
+  "screen_sel": 128,
+  "screen_sel_all": 731,
+  "screen_attr": 100,
+  "cover_sel_top100": 100,
+  "cover_attr_k300": 300,
+  "cover_attr_k1000": 1000
+ }
+}

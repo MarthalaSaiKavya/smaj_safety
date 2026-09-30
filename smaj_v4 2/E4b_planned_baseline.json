@@ -1,0 +1,23 @@
+{
+ "note": "planned = actions of the current chunk known at the probe (up to the next inference); held-out = odd initial states",
+ "speed": {
+  "n_heldout_rows": 1723,
+  "corr_planned_chunk": 0.9186635101889843,
+  "corr_current_speed": 0.40912654048198765,
+  "speed_fast": {
+   "corr": 0.7291078098288427,
+   "partial_corr_given_planned_current_task": 0.4468467722908908
+  },
+  "speed_slow": {
+   "corr": -0.7944876561802047,
+   "partial_corr_given_planned_current_task": -0.4662859944856558
+  }
+ },
+ "grip": {
+  "n_heldout_rows": 693,
+  "n_pos": 240,
+  "auroc_planned_chunk": 0.9708333333333333,
+  "auroc_feature_set": 0.9952262693156733,
+  "auroc_feature_set_when_chunk_has_no_close": 0.9646799116997792
+ }
+}

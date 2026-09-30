@@ -1,0 +1,39 @@
+{
+ "step": "monitor",
+ "complete": true,
+ "time": "2026-09-30 10:23:52",
+ "conds": [
+  "clean",
+  "covered",
+  "screened",
+  "cover_miss",
+  "covered_static"
+ ],
+ "tasks": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9
+ ],
+ "inits": [
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23
+ ],
+ "bank_size": 2361
+}
